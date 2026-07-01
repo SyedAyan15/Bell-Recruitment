@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Home - Bell Recruitment | Recruitment and Field Marketing | Belfast{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Sourcing the best FMCG talent</h1>
+    <div class="hero-buttons">
+      <a class="btn" href="https://www.careers-page.com/bellrecruitment" target="_blank" rel="noopener">I am a jobseeker</a>
+      <a class="btn" href="{{ url_for('services') }}">I am an employer</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <p class="intro-statement">Julie Bell, Founder &amp; CEO of Bell Recruitment has been delivering the best FMCG talent &amp; Executive Search solutions for over 25 years</p>
+  </div>
+</section>
+
+<section class="center-btn-wrap">
+  <div class="container text-center">
+    <a class="btn btn-sm" href="https://www.careers-page.com/bellrecruitment" target="_blank" rel="noopener">View all jobs</a>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-box">
+    <p>Ready for your next opportunity? Upload your CV to be matched with the right job for you.</p>
+    <a class="btn" href="{{ url_for('cv_upload') }}"><i class="fas fa-cloud-upload-alt"></i> Upload your CV</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="partners-heading">Our partners</h2>
+    <div class="logo-carousel">
+      <div class="logo-track">
+        <img src="{{ url_for('static', filename='img/partner-ten.png') }}" alt="Tennents NI">
+        <img src="{{ url_for('static', filename='img/partner-irwins.png') }}" alt="Irwin's Bakery">
+        <img src="{{ url_for('static', filename='img/partner-prep.png') }}" alt="Prep House">
+        <img src="{{ url_for('static', filename='img/partner-henderson.png') }}" alt="Henderson Group">
+        <img src="{{ url_for('static', filename='img/partner-gm.png') }}" alt="GM Marketing">
+        <img src="{{ url_for('static', filename='img/partner-dan.png') }}" alt="Dan">
+        <img src="{{ url_for('static', filename='img/partner-richmond.png') }}" alt="Richmond Marketing">
+        <img src="{{ url_for('static', filename='img/partner-wnr.webp') }}" alt="WNR">
+        <img src="{{ url_for('static', filename='img/partner-thompsons.jpg') }}" alt="Thompson's Family Tea">
+        <img src="{{ url_for('static', filename='img/partner-whites.png') }}" alt="Whites">
+        <img src="{{ url_for('static', filename='img/partner-kestrel.jpeg') }}" alt="Kestrel Foods">
+        <img src="{{ url_for('static', filename='img/partner-cn.jpeg') }}" alt="Courtney and Nelson">
+        <img src="{{ url_for('static', filename='img/partner-mulrines.jpeg') }}" alt="Mulrines">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="handshake-section">
+  <div class="handshake-inner">
+    <div class="handshake-box">
+      <h2>Recruitment, done right</h2>
+      <p>With over 25 years experience, we&rsquo;ve built lasting partnerships with organisations that trust us to find the best people. We know recruitment inside out &ndash; and we genuinely care about getting it right.</p>
+      <a class="btn" href="{{ url_for('contact') }}"><i class="fas fa-address-book"></i> Talk to us today</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

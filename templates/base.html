@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Bell Recruitment | Recruitment and Field Marketing | Belfast{% endblock %}</title>
+<meta name="description" content="{% block description %}Based in Belfast, Northern Ireland, Bell Recruitment and Field Marketing is a leading recruitment consultancy, led by founder and CEO, Julie Bell. We specialise in Commercial, Operational, and Care Sector roles.{% endblock %}">
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Slab:wght@300;400;500;600&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="header-logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Bell Recruitment logo" width="220" height="103">
+      </a>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="{{ url_for('home') }}" class="{{ 'active' if active=='home' else '' }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="{{ 'active' if active=='about' else '' }}">About Us</a></li>
+        <li><a href="{{ url_for('services') }}" class="{{ 'active' if active=='services' else '' }}">Services</a></li>
+        <li><a href="https://www.careers-page.com/bellrecruitment" target="_blank" rel="noopener">Jobs</a></li>
+        <li><a href="{{ url_for('blogs') }}" class="{{ 'active' if active=='blogs' else '' }}">Blogs</a></li>
+        <li><a href="{{ url_for('contact') }}" class="{{ 'active' if active=='contact' else '' }}">Contact us</a></li>
+        <li><a href="{{ url_for('testimonials') }}" class="{{ 'active' if active=='testimonials' else '' }}">Testimonials</a></li>
+        <li><a href="{{ url_for('cv_upload') }}" class="{{ 'active' if active=='cv' else '' }}">CV upload</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu Toggle" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="content">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-inner">
+      <div class="footer-tagline">
+        <h2>Sourcing the best FMCG talent.</h2>
+      </div>
+      <div class="footer-cta-buttons">
+        <a class="btn btn-white" href="https://www.careers-page.com/bellrecruitment" target="_blank" rel="noopener">Find a Job</a>
+        <a class="btn btn-white" href="{{ url_for('services') }}">Find Talent</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-inner footer-bottom-inner">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Bell Recruitment logo" class="footer-logo">
+      <div class="footer-contact">
+        <p><a href="{{ url_for('contact') }}">Contact Us</a> | <a href="{{ url_for('privacy') }}">Privacy Policy</a></p>
+        <p>24 Mount Charles, Belfast BT7 1NZ, United Kingdom<br><span>+44 28 9031 1211</span></p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/bell-recruitment-ni/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/bellrecruits" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
