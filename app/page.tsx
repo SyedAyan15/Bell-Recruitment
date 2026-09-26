@@ -31,10 +31,10 @@ export default function HomePage() {
               goods brands with exceptional commercial talent across Northern Ireland, Ireland, and the UK.
             </p>
             <div className="btn-row">
-              <a className="btn btn-burgundy" href={CONTACT.jobsUrl} target="_blank" rel="noopener">
+              <a className="btn btn-gold" href={CONTACT.jobsUrl} target="_blank" rel="noopener">
                 I am a jobseeker <i className="fas fa-arrow-right" />
               </a>
-              <Link className="btn btn-ghost" href="/employer/">
+              <Link className="btn btn-outline" href="/employer/">
                 I am an employer
               </Link>
             </div>

@@ -43,6 +43,8 @@ public/images/          Photos, client logos, partner logos
 data/, uploads/         Form submissions at runtime (git-ignored, only .gitkeep is committed)
 ```
 
+Every page starts with a burgundy banner (the home hero or `PageHero`) because the header is transparent at the top and overlaps it. A new page should start with `PageHero` too.
+
 URLs keep a trailing slash (`/about-us/`) to match the original site. This is set with `trailingSlash` in `next.config.ts`.
 
 ## Editing content
@@ -68,7 +70,7 @@ Page headings and intro paragraphs are in each page's `page.tsx`.
 
 | Component | Purpose |
 |---|---|
-| `Header` | Light, translucent sticky nav with the burgundy logo (`logo-burgundy.png`), mobile menu, gold scroll-progress bar, slimmer once scrolled |
+| `Header` | Sticky nav: transparent over the burgundy banner at the top of each page, solid burgundy once scrolled; mobile menu and gold scroll-progress bar |
 | `Footer` | Call to action, link columns, contact details |
 | `PageHero` | Top banner on inner pages, with an optional background photo |
 | `MeetJulie` | Founder photo and bio (Home and About) |

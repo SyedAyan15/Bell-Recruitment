@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from "react";
 import { NAV_LINKS } from "@/lib/content";
 
 // Sticky header with the main nav (collapses to a hamburger menu below 1080px).
+// It is transparent over the burgundy banner at the top of every page, and turns solid
+// burgundy once the visitor scrolls (the "scrolled" class).
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -41,7 +43,7 @@ export default function Header() {
     <header className={`site-header${scrolled ? " scrolled" : ""}`}>
       <div className="header-inner">
         <Link href="/" className="header-logo" onClick={close}>
-          <Image src="/images/logo-burgundy.png" alt="Bell Recruitment" width={1699} height={765} priority />
+          <Image src="/images/logo-white.png" alt="Bell Recruitment" width={1699} height={765} priority />
         </Link>
 
         <nav className={`main-nav${open ? " open" : ""}`} aria-label="Primary">
