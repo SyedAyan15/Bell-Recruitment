@@ -14,7 +14,7 @@ export default function BlogsPage() {
 
       <section className="section">
         <div className="container">
-          <div className="card-grid-3">
+          <div className="card-grid-3 mobile-swipe">
             {BLOG_POSTS.map((post) => (
               <article className="blog-card" key={post.title}>
                 <Image src={post.image} alt="" width={800} height={500} sizes="(max-width: 900px) 100vw, 380px" />

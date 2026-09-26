@@ -227,26 +227,37 @@ h1, h2, h3, h4 {
 .services-text .tagline { color: var(--burgundy); font-weight: 600; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
 .services-text > p { margin-bottom: 16px; }
 
-/* ─── Process ─── */
+/* ─── Process ───
+   Each step (except the last) has a .process-link connector running from its circle's
+   centre to the next circle's centre, with a .process-dot travelling along it.
+   Timing, all driven by --step (the step index) once .process-grid gets the `in` class:
+   - connectors draw in 0.45s each, 0.12s apart
+   - the loop is 5s; each dot crosses its connector in the first 20% (1s), starting at
+     0.3s + step x 1s, so the dot reaches circle n at 0.3s + n x 1s
+   - each circle pulses at 0.3s + step x 1s, i.e. as the dot arrives
+   To change the speed, update the 5s loop and the 1s step in all three places together. */
 .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; position: relative; }
 .process-step { text-align: center; position: relative; }
 .process-step:hover .step-num { background: var(--gold); color: var(--burgundy-deep); }
 .process-step h4 { transition: color .3s; }
 .process-step:hover h4 { color: var(--burgundy); }
-/* Track runs from the centre of step 1 to the centre of step 5 (5 columns, 4 x 22px gaps). */
-.process-track { position: absolute; top: 23px; height: 2px; left: calc((100% - 88px) / 10); right: calc((100% - 88px) / 10); background: rgba(201,169,110,.22); }
-.process-track-fill { position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; }
-.process-grid.in .process-track-fill { transform: scaleX(1); transition: transform 1.6s cubic-bezier(.4,0,.2,1) .3s; }
+/* Desktop: horizontal, from this column's centre to the next (column width + 22px gap). */
+.process-link { position: absolute; top: 23px; left: 50%; width: calc(100% + 22px); height: 2px; background: rgba(201,169,110,.22); }
+.process-link::before { content: ""; position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; }
+.process-grid.in .process-link::before { transform: scaleX(1); transition: transform .45s ease-out calc(var(--step, 0) * .12s); }
 .process-dot { position: absolute; left: 0; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--gold-light); box-shadow: 0 0 0 5px rgba(201,169,110,.28), 0 0 18px 4px rgba(201,169,110,.85); opacity: 0; }
-.process-grid.in .process-dot { animation: dot-travel 6s linear 1.9s infinite; }
-/* The dot crosses the track in 85% of the 6s loop, so it reaches step n at 1.275s x n. */
-.process-grid.in .step-num { animation: step-pulse 6s linear infinite; animation-delay: calc(1.9s + var(--step, 0) * 1.275s); }
-/* Animates left (not a transform) so the dot never widens the page's scroll area. */
-@keyframes dot-travel {
-  0% { left: 0; opacity: 0; }
-  4% { opacity: 1; }
-  85% { left: 100%; opacity: 1; }
-  92%, 100% { left: 100%; opacity: 0; }
+.process-grid.in .process-dot { animation: dot-travel-x 5s linear infinite; animation-delay: calc(.3s + var(--step, 0) * 1s); }
+.process-grid.in .step-num { animation: step-pulse 5s linear infinite; animation-delay: calc(.3s + var(--step, 0) * 1s); }
+/* Animates left/top (not a transform) so the dot never widens the page's scroll area. */
+@keyframes dot-travel-x {
+  0% { left: 0; opacity: 1; }
+  20% { left: 100%; opacity: 1; }
+  20.01%, 100% { left: 100%; opacity: 0; }
+}
+@keyframes dot-travel-y {
+  0% { top: 0; opacity: 1; }
+  20% { top: 100%; opacity: 1; }
+  20.01%, 100% { top: 100%; opacity: 0; }
 }
 @keyframes step-pulse {
   0% { transform: scale(1); box-shadow: 0 0 0 6px var(--ring), 0 0 0 6px rgba(201,169,110,.75); }
@@ -414,7 +425,12 @@ h1, h2, h3, h4 {
   .page-hero-img, .process-grid.in .step-num, .process-grid.in .process-dot, .photo-caption { animation: none; }
   .tilt { transform: none; }
   .value-card:hover, .testimonial-card:hover, .why-card:hover, .btn:not(:disabled):hover { transform: none; }
-  .process-grid.in .process-track-fill { transition: none; }
+  .process-grid.in .process-link::before { transition: none; }
+}
+
+/* Touch screens: no lift-on-hover, which would otherwise stick after a tap. */
+@media (hover: none) {
+  .value-card:hover, .testimonial-card:hover, .why-card:hover, .service-card:hover, .btn:not(:disabled):hover { transform: none; }
 }
 
 /* ─── Responsive ─── */
@@ -438,8 +454,18 @@ h1, h2, h3, h4 {
   .julie-photo { max-width: 420px; }
   .card-grid-3, .testimonial-grid, .why-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-grid { grid-template-columns: 1fr; gap: 28px; }
-  .process-track { display: none; }
+  /* Mobile process: vertical timeline, circles on the left, connector running down to the next circle. */
+  .process-grid { grid-template-columns: 1fr; gap: 0; max-width: 560px; }
+  .process-step { display: grid; grid-template-columns: 48px 1fr; column-gap: 20px; text-align: left; padding-bottom: 30px; }
+  .process-step:last-child { padding-bottom: 0; }
+  .step-num { grid-row: 1 / span 2; align-self: start; margin-bottom: 0; }
+  .process-step h4 { align-self: center; margin: 12px 0 6px; }
+  .process-step p { grid-column: 2; font-size: 14.5px; }
+  .process-link { top: 24px; left: 23px; width: 2px; height: 100%; }
+  .process-link::before { transform: scaleY(0); transform-origin: top; }
+  .process-grid.in .process-link::before { transform: scaleY(1); }
+  .process-dot { left: 50%; top: 0; margin: -7px 0 0 -7px; }
+  .process-grid.in .process-dot { animation-name: dot-travel-y; }
   .sector-grid { grid-template-columns: 1fr 1fr; }
   .split-head { grid-template-columns: 1fr; gap: 32px; }
   .page-hero.has-photo { padding: 88px 0 80px; }
@@ -458,6 +484,24 @@ h1, h2, h3, h4 {
   .form-row { grid-template-columns: 1fr; }
   .sector-grid { grid-template-columns: 1fr; }
   .sector-card { aspect-ratio: 4 / 3; }
+  .value-card { padding: 28px 22px; }
+  .logo-track { gap: 40px; }
+  .logo-track img { height: 52px; }
+
+  /* Swipe rows: on phones, grids marked .mobile-swipe become a horizontal row that
+     snaps card by card, with the next card peeking in to show it can be swiped. */
+  .mobile-swipe {
+    display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin: 0 -16px; padding: 6px 16px 20px; scroll-padding-inline: 16px;
+    scrollbar-width: none; overscroll-behavior-x: contain;
+  }
+  .mobile-swipe::-webkit-scrollbar { display: none; }
+  .mobile-swipe > * { flex: 0 0 84%; scroll-snap-align: start; }
+  .mobile-swipe .sector-card { aspect-ratio: 4 / 5; }
+  /* Cards in a swipe row show straight away instead of fading in one by one as they're swiped.
+     The card list matches the scroll-reveal rule's specificity; this rule wins by coming later. */
+  html.js .mobile-swipe > :is(.sector-card, .service-card, .testimonial-card, .blog-card):not(.in) { opacity: 1; }
+  .mobile-swipe > .in { animation: none; }
   .form-panel { padding: 24px 20px; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-cta, .footer-inner, .footer-bottom { padding-left: 16px; padding-right: 16px; }

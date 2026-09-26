@@ -5,8 +5,8 @@ import { useEffect } from "react";
 
 // Elements that fade/slide in as they scroll into view. Keep in sync with the
 // `html.js :is(...)` hiding rule in globals.css, which hides them before hydration
-// so there is no flash of content. `.process-grid` only receives the `in` class
-// (it starts the vetting-process dot animation) and is not hidden itself.
+// so there is no flash of content. `.process-grid` is observed separately: it only
+// receives the `in` class (which starts the vetting-process animation) and is not hidden.
 const REVEAL = [
   ".hero-inner > *",
   ".page-hero .container > *",
@@ -38,25 +38,29 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const targets = Array.from(
-      document.querySelectorAll<HTMLElement>(`${REVEAL}, .process-grid`),
-    ).filter((el) => !el.classList.contains("in"));
+    const pending = (selector: string) =>
+      Array.from(document.querySelectorAll<HTMLElement>(selector)).filter((el) => !el.classList.contains("in"));
+    const targets = pending(REVEAL);
+    const processGrids = pending(".process-grid");
 
     if (!("IntersectionObserver" in window)) {
-      targets.forEach((el) => el.classList.add("in"));
+      [...targets, ...processGrids].forEach((el) => el.classList.add("in"));
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          entry.target.classList.add("in");
-          observer.unobserve(entry.target);
-        }
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
-    );
+    const reveal = (entries: IntersectionObserverEntry[], obs: IntersectionObserver) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("in");
+        obs.unobserve(entry.target);
+      }
+    };
+    // Content waits until it is a little way into the viewport so the entrance is seen.
+    const observer = new IntersectionObserver(reveal, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    // The process animation starts the moment the section's top edge appears, so it is
+    // already running even when the visitor scrolls past quickly.
+    const eagerObserver = new IntersectionObserver(reveal, { threshold: 0 });
+    processGrids.forEach((el) => eagerObserver.observe(el));
 
     for (const el of targets) {
       // Stagger siblings (cards in a grid, lines of a heading block) one after another.
@@ -66,7 +70,10 @@ export default function ScrollReveal() {
       observer.observe(el);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      eagerObserver.disconnect();
+    };
   }, [pathname]);
 
   return null;

@@ -102,7 +102,7 @@ export default function HomePage() {
             Whether you need a senior leader or a high-performing sales professional, our FMCG expertise delivers the
             right people, every time.
           </p>
-          <div className="card-grid-3">
+          <div className="card-grid-3 mobile-swipe">
             {SERVICES.map((s) => (
               <div className="service-card" key={s.title}>
                 <div className="service-media">
@@ -202,7 +202,7 @@ export default function HomePage() {
             <h2>What our FMCG clients say</h2>
             <p className="section-intro">We don&rsquo;t ask you to take our word for it.</p>
           </div>
-          <TestimonialGrid />
+          <TestimonialGrid swipeOnMobile />
         </div>
       </section>
 

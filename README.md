@@ -74,8 +74,8 @@ Page headings and intro paragraphs are in each page's `page.tsx`.
 | `MeetJulie` | Founder photo and bio (Home and About) |
 | `PartnerCarousel` | Scrolling partner logos |
 | `SectorGrid` | Sector photo cards |
-| `ProcessSteps` | Vetting process with the animated line and travelling dot |
-| `TestimonialGrid` | Testimonial cards with company logos |
+| `ProcessSteps` | Vetting process with animated connectors and a travelling dot (vertical on mobile) |
+| `TestimonialGrid` | Testimonial cards with company logos (`swipeOnMobile` for a swipe row on phones) |
 | `CvBanner` | "Upload your CV" call to action |
 | `SubmitForm` | Shared form wrapper that posts to an API route and shows success or error |
 | `StatCounter` | Number that counts up when scrolled into view |
@@ -91,7 +91,15 @@ All animation is plain CSS and small React components.
 
 > The selector list exists in two places: `REVEAL` in `components/ScrollReveal.tsx` and the `html.js :is(...)` rule in `globals.css`. If you add a new element type that should animate in, add it to **both**.
 
-**Vetting process.** `ProcessSteps` renders a track behind the numbered circles. When the grid gets the `in` class, the gold line draws in, then a dot travels along it on a 6-second loop, reaching one step every 1.275s. Each circle's pulse is delayed by `--step × 1.275s`, set per step, so it fires as the dot arrives. If you change the loop length in `@keyframes dot-travel`, update those delays too (the maths is in a CSS comment). On screens narrower than 900px the steps stack and the line is hidden.
+**Vetting process.** `ProcessSteps` gives every step except the last a `.process-link` connector running from its circle to the next one, with a gold `.process-dot` on it. The grid is observed separately from other content and gets the `in` class the moment its top edge appears, so the animation is already running even when visitors scroll quickly. Then:
+
+- the connectors draw in (0.45s each, 0.12s apart)
+- on a 5-second loop, the dot crosses one connector per second, reaching circle *n* at 0.3s + *n* × 1s
+- each circle pulses at the same moment, delayed by its `--step` index
+
+On desktop the connectors run horizontally. Below 900px the steps become a vertical timeline and the dot travels downwards. All timings are listed in a comment at the top of the "Process" section of `globals.css`; to change the speed, update the loop length and per-step delay together.
+
+**Swipe rows on phones.** Below 560px, any grid with the `mobile-swipe` class becomes a horizontal row that snaps card by card, with the next card peeking in. It's used for the sector cards, home service cards, home testimonials (`<TestimonialGrid swipeOnMobile />`) and blog cards. It's pure CSS; search `globals.css` for "Swipe rows".
 
 **Stats.** `StatCounter` renders the final value on the server, so it's correct without JavaScript and for search engines, then counts up from 0 when scrolled into view. Screen readers get the final value through a visually hidden span.
 
