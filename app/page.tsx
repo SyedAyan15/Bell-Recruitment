@@ -8,28 +8,43 @@ import SectorGrid from "@/components/SectorGrid";
 import StatCounter from "@/components/StatCounter";
 import Tilt from "@/components/Tilt";
 import TestimonialGrid from "@/components/TestimonialGrid";
-import { CANDIDATE_REASONS, CONTACT, SERVICES, STATS, VALUES } from "@/lib/content";
+import { CANDIDATE_REASONS, CONTACT, PARTNERS, SERVICES, STATS, VALUES } from "@/lib/content";
+
+// A few recognisable client logos for the "Trusted by" strip under the hero buttons.
+const HERO_CLIENTS = PARTNERS.filter((p) => ["Tennent's NI", "Irwin's Bakery", "Henderson Group", "Richmond Marketing"].includes(p.alt));
 
 export default function HomePage() {
   return (
     <>
       <section className="hero">
         <div className="hero-inner">
-          <div>
-            <div className="eyebrow">FMCG Recruitment Specialists &middot; Belfast</div>
-            <h1>Sourcing the best FMCG talent</h1>
+          <div className="hero-copy">
+            <div className="hero-badge">
+              <span className="hero-badge-dot" /> FMCG Recruitment Specialists &middot; Belfast
+            </div>
+            <h1>
+              Sourcing the best <em>FMCG talent</em>
+            </h1>
             <p>
               Julie Bell, Founder &amp; CEO of Bell Recruitment, has been delivering the best FMCG talent and
               Executive Search solutions for over 25 years, connecting leading food, beverage, and consumer
               goods brands with exceptional commercial talent across Northern Ireland, Ireland, and the UK.
             </p>
             <div className="btn-row">
-              <a className="btn btn-gold" href={CONTACT.jobsUrl} target="_blank" rel="noopener">
-                I am a jobseeker
+              <a className="btn btn-burgundy" href={CONTACT.jobsUrl} target="_blank" rel="noopener">
+                I am a jobseeker <i className="fas fa-arrow-right" />
               </a>
-              <Link className="btn btn-outline" href="/employer/">
+              <Link className="btn btn-ghost" href="/employer/">
                 I am an employer
               </Link>
+            </div>
+            <div className="hero-trust">
+              <span>Trusted by</span>
+              <div className="hero-trust-logos">
+                {HERO_CLIENTS.map((p) => (
+                  <Image key={p.src} src={p.src} alt={p.alt} width={p.w} height={p.h} />
+                ))}
+              </div>
             </div>
           </div>
           <Tilt className="hero-photo">
@@ -41,6 +56,14 @@ export default function HomePage() {
               sizes="(max-width: 900px) 100vw, 520px"
               priority
             />
+            <div className="hero-chip hero-chip-years">
+              <strong>25+</strong>
+              <span>
+                years placing
+                <br />
+                FMCG talent
+              </span>
+            </div>
             <div className="photo-caption">
               <strong>Julie Bell</strong>
               <span>Founder &amp; CEO, Bell Recruitment</span>

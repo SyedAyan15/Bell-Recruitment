@@ -6,7 +6,8 @@ import { useEffect } from "react";
 // Elements that fade/slide in as they scroll into view. Keep in sync with the
 // `html.js :is(...)` hiding rule in globals.css, which hides them before hydration
 // so there is no flash of content. `.process-grid` is observed separately: it only
-// receives the `in` class (which starts the vetting-process animation) and is not hidden.
+// receives the `in` class, which starts the vetting-process sequence (its steps are
+// revealed one by one by CSS, not by this list).
 const REVEAL = [
   ".hero-inner > *",
   ".page-hero .container > *",
@@ -17,7 +18,6 @@ const REVEAL = [
   ".value-card",
   ".service-card",
   ".sector-card",
-  ".process-step",
   ".why-card",
   ".testimonial-card",
   ".julie-photo",
@@ -57,9 +57,10 @@ export default function ScrollReveal() {
     };
     // Content waits until it is a little way into the viewport so the entrance is seen.
     const observer = new IntersectionObserver(reveal, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-    // The process animation starts the moment the section's top edge appears, so it is
-    // already running even when the visitor scrolls past quickly.
-    const eagerObserver = new IntersectionObserver(reveal, { threshold: 0 });
+    // The vetting process builds up step by step, so it starts as soon as its top edge is
+    // a little way into view: early enough to catch quick scrollers, late enough that
+    // step 1 is on screen when it appears.
+    const eagerObserver = new IntersectionObserver(reveal, { rootMargin: "0px 0px -10% 0px", threshold: 0 });
     processGrids.forEach((el) => eagerObserver.observe(el));
 
     for (const el of targets) {

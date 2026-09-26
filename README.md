@@ -68,7 +68,7 @@ Page headings and intro paragraphs are in each page's `page.tsx`.
 
 | Component | Purpose |
 |---|---|
-| `Header` | Sticky nav, mobile menu, gold scroll-progress bar, slimmer header once scrolled |
+| `Header` | Light, translucent sticky nav with the burgundy logo (`logo-burgundy.png`), mobile menu, gold scroll-progress bar, slimmer once scrolled |
 | `Footer` | Call to action, link columns, contact details |
 | `PageHero` | Top banner on inner pages, with an optional background photo |
 | `MeetJulie` | Founder photo and bio (Home and About) |
@@ -91,13 +91,12 @@ All animation is plain CSS and small React components.
 
 > The selector list exists in two places: `REVEAL` in `components/ScrollReveal.tsx` and the `html.js :is(...)` rule in `globals.css`. If you add a new element type that should animate in, add it to **both**.
 
-**Vetting process.** `ProcessSteps` gives every step except the last a `.process-link` connector running from its circle to the next one, with a gold `.process-dot` on it. The grid is observed separately from other content and gets the `in` class the moment its top edge appears, so the animation is already running even when visitors scroll quickly. Then:
+**Vetting process.** `ProcessSteps` gives every step except the last a `.process-link` connector running from its circle to the next one, with a gold `.process-dot` on it. The grid is observed separately from other content and gets the `in` class once its top edge is a little way into view. Then, all in CSS:
 
-- the connectors draw in (0.45s each, 0.12s apart)
-- on a 5-second loop, the dot crosses one connector per second, reaching circle *n* at 0.3s + *n* × 1s
-- each circle pulses at the same moment, delayed by its `--step` index
+1. **Build-up sequence.** Step 1 appears first. Its connector draws towards step 2 with the dot leading the line, and step 2 appears the moment the dot reaches it, and so on up to step 5. Each step takes `--seq` (0.7s).
+2. **Loop.** From `--loop-start` (4s) the dot travels one connector per second on a 5-second loop, and each circle pulses as it arrives.
 
-On desktop the connectors run horizontally. Below 900px the steps become a vertical timeline and the dot travels downwards. All timings are listed in a comment at the top of the "Process" section of `globals.css`; to change the speed, update the loop length and per-step delay together.
+`--seq` and `--loop-start` are set on `.process-grid` in `globals.css`, with the full timing explained in the comment at the top of the "Process" section. On desktop the connectors run horizontally; below 900px the steps become a vertical timeline and the dot travels downwards. The steps are deliberately left out of the general scroll-reveal list because this sequence controls when they appear.
 
 **Swipe rows on phones.** Below 560px, any grid with the `mobile-swipe` class becomes a horizontal row that snaps card by card, with the next card peeking in. It's used for the sector cards, home service cards, home testimonials (`<TestimonialGrid swipeOnMobile />`) and blog cards. It's pure CSS; search `globals.css` for "Swipe rows".
 
