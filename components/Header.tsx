@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { NAV_LINKS } from "@/lib/content";
 
+// Sticky header with the main nav (collapses to a hamburger menu below 1080px).
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -13,6 +14,8 @@ export default function Header() {
   const progressRef = useRef<HTMLDivElement>(null);
   const close = () => setOpen(false);
 
+  // On scroll: fill the gold progress bar (via the --progress CSS variable, no re-render)
+  // and switch to the slimmer "scrolled" header. Throttled to one update per frame.
   useEffect(() => {
     let frame = 0;
     const update = () => {

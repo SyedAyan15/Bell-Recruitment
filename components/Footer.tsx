@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CONTACT } from "@/lib/content";
 
+// Site footer: "Find a Job / Find Talent" call to action, link columns and contact details.
 export default function Footer() {
   return (
     <footer className="site-footer">

@@ -2,6 +2,9 @@
 
 import { useState, type FormEvent, type ReactNode } from "react";
 
+// Shared wrapper for the contact and CV forms: posts the fields as multipart
+// form data to `endpoint` (an API route in app/api) and shows success/error messages.
+
 type Status =
   | { kind: "idle" }
   | { kind: "sending" }

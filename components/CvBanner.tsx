@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// Full-width "upload your CV" call to action over the desk photo.
 export default function CvBanner() {
   return (
     <section className="photo-banner cv-banner">

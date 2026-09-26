@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CONTACT, JULIE_ROLES } from "@/lib/content";
 import Tilt from "./Tilt";
 
+// Founder profile (photo, bio, industry roles), used on the Home and About pages.
 export default function MeetJulie() {
   return (
     <div className="julie-wrap">

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+// Banner at the top of inner pages. With `image`, the photo sits behind a burgundy
+// overlay with a slow zoom; `imagePosition` sets which part of the photo stays in view.
 export default function PageHero({
   eyebrow,
   title,

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+// Floating button that appears after scrolling 700px and smooth-scrolls back to the top.
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 

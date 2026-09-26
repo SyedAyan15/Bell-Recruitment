@@ -4,7 +4,7 @@ import path from "node:path";
 // Submissions are kept on local disk so nothing needs an external database,
 // matching the behaviour of the original Flask backend.
 const ROOT = process.cwd();
-export const UPLOAD_DIR = path.join(ROOT, "uploads");
+const UPLOAD_DIR = path.join(ROOT, "uploads");
 const DATA_DIR = path.join(ROOT, "data");
 
 export const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SECTORS } from "@/lib/content";
 
+// Photo cards for the FMCG sectors we recruit for; content comes from SECTORS in lib/content.ts.
 export default function SectorGrid() {
   return (
     <div className="sector-grid">

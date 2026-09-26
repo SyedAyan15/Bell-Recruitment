@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { TESTIMONIALS } from "@/lib/content";
 
+// Client quotes with company logos; content comes from TESTIMONIALS in lib/content.ts.
 export default function TestimonialGrid() {
   return (
     <div className="testimonial-grid">
