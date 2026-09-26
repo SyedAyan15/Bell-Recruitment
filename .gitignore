@@ -1,7 +1,20 @@
-__pycache__/
-*.pyc
-venv/
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env
+.env*.local
+
+# logs
 *.log
+npm-debug.log*
+
+# form submissions (kept locally, never committed)
 uploads/*
 !uploads/.gitkeep
 data/*
