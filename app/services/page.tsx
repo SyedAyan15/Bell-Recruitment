@@ -36,7 +36,6 @@ export default function ServicesPage() {
         eyebrow="Our service"
         title="FMCG Executive Search in Northern Ireland"
         image="/images/handshake-bg.webp"
-        buttons={[{ label: "Discuss a vacancy", href: URLS.contact }]}
       >
         For the hires that decide how your FMCG business performs with customers, the best candidates are usually
         already in a good job and not applying anywhere. We find them, approach them directly and assess each one
@@ -48,7 +47,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="section-label">What&rsquo;s included</div>
           <h2>What FMCG executive search with Bell Recruitment includes</h2>
-          <div className="feature-grid">
+          <div className="feature-grid feature-grid-3">
             {INCLUDES.map((f) => (
               <div className="value-card" key={f.lead}>
                 <div className="value-icon">
