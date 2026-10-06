@@ -8,7 +8,7 @@ import LetterReveal from "@/components/LetterReveal";
 import PageHero from "@/components/PageHero";
 import ProcessSteps from "@/components/ProcessSteps";
 import RoleGroups from "@/components/RoleGroups";
-import { URLS } from "@/lib/content";
+import { ROLE_GROUPS, URLS } from "@/lib/content";
 
 // Copy: "6. Candidate Process" in the client's Website Content document.
 
@@ -120,24 +120,7 @@ export default function CandidateProcessPage() {
         <div className="container">
           <div className="section-label">Roles we recruit</div>
           <h2>What FMCG jobs does Bell Recruitment recruit in Northern Ireland?</h2>
-          <RoleGroups
-            groups={[
-              { label: "Leadership", roles: ["Commercial Director", "Head of Sales", "Commercial Manager"] },
-              {
-                label: "Sales and business development",
-                roles: ["Sales Executive", "Sales Representative", "Business Development Manager and Executive"],
-              },
-              { label: "Key accounts", roles: ["National, Key, On-Trade and Off-Trade Account Managers"] },
-              {
-                label: "Brand and marketing",
-                roles: ["Marketing Director", "Marketing Manager", "Brand Manager", "Assistant Brand Manager"],
-              },
-              {
-                label: "Within FMCG businesses",
-                roles: ["Commercial Executive", "Production Manager", "Product Development Manager", "Management Accountant"],
-              },
-            ]}
-          />
+          <RoleGroups groups={ROLE_GROUPS} />
         </div>
       </section>
 

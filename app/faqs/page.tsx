@@ -90,8 +90,8 @@ export default function FaqsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
 
       <PageHero eyebrow="FAQs" title="FMCG Recruitment FAQs">
-        Answers to the questions we hear most from FMCG candidates and employers in Northern Ireland. Can&rsquo;t find
-        yours? Call Julie on <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.
+        Whether you&rsquo;re looking for your next FMCG opportunity or the right person for your team, here are answers
+        to the questions we hear most often across Northern Ireland.
       </PageHero>
 
       <nav className="jump-links" aria-label="FAQ sections">

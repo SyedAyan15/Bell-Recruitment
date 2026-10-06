@@ -528,7 +528,6 @@ h1, h2, h3, h4 {
 .role-group h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .role-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .role-chips li { padding: 6px 13px; border-radius: 999px; background: var(--surface); font-size: 13.5px; color: var(--text-dark); }
-.section-alt .role-chips li { background: var(--cream); }
 
 /* 5C framework. */
 .five-cs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 8px; }

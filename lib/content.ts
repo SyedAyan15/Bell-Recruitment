@@ -151,3 +151,32 @@ export const BLOG_POSTS = [
     image: "/images/team-success.jpg",
   },
 ];
+
+// "Roles we recruit" cards, shared by the Home and Candidates pages.
+export const ROLE_GROUPS = [
+  { label: "Leadership", roles: ["Commercial Director", "Head of Sales", "Commercial Manager"] },
+  {
+    label: "Sales and business development",
+    roles: ["Sales Executive", "Sales Representative", "Business Development Manager", "Business Development Executive"],
+  },
+  {
+    label: "Key accounts",
+    roles: ["National Account Manager", "Key Account Manager", "On-Trade Account Manager", "Off-Trade Account Manager"],
+  },
+  {
+    label: "Brand and marketing",
+    roles: ["Marketing Director", "Marketing Manager", "Brand Manager", "Assistant Brand Manager"],
+  },
+  {
+    label: "Commercial, operations and finance roles inside FMCG businesses",
+    roles: [
+      "Commercial Executive",
+      "Commercial Admin",
+      "Production Manager",
+      "Product Development Manager",
+      "Management Accountant",
+      "Assistant Accountant",
+      "Accounts Assistant",
+    ],
+  },
+];

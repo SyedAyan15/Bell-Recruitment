@@ -10,7 +10,7 @@ import ProofStrip from "@/components/ProofStrip";
 import RoleGroups from "@/components/RoleGroups";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import Tilt from "@/components/Tilt";
-import { BLOG_POSTS, JULIE_ROLES, PARTNERS, URLS } from "@/lib/content";
+import { BLOG_POSTS, JULIE_ROLES, PARTNERS, ROLE_GROUPS, URLS } from "@/lib/content";
 
 // Copy: "1. Home" in the client's Website Content document.
 
@@ -103,47 +103,7 @@ export default function HomePage() {
             Whether a hire works depends on the customers, the territory and the targets.
             These are the roles we recruit:
           </p>
-          <RoleGroups
-            groups={[
-              { label: "Leadership", roles: ["Commercial Director", "Head of Sales", "Commercial Manager"] },
-              {
-                label: "Sales and business development",
-                roles: [
-                  "Sales Executive",
-                  "Sales Representative",
-                  "Business Development Manager",
-                  "Business Development Executive",
-                ],
-              },
-              {
-                label: "Key accounts",
-                roles: [
-                  "National Account Manager",
-                  "Key Account Manager",
-                  "On-Trade Account Manager",
-                  "Off-Trade Account Manager",
-                ],
-              },
-              {
-                label: "Brand and marketing",
-                roles: ["Marketing Director", "Marketing Manager", "Brand Manager", "Assistant Brand Manager"],
-              },
-              {
-                // The home page copy gives only this heading; the titles come from the
-                // Services page's "Commercial support" and "Operations, product and finance" groups.
-                label: "Commercial, operations and finance roles inside FMCG businesses",
-                roles: [
-                  "Commercial Executive",
-                  "Commercial Admin",
-                  "Production Manager",
-                  "Product Development Manager",
-                  "Management Accountant",
-                  "Assistant Accountant",
-                  "Accounts Assistant",
-                ],
-              },
-            ]}
-          />
+          <RoleGroups groups={ROLE_GROUPS} />
           <ButtonRow
             buttons={[{ label: "Browse FMCG jobs in Northern Ireland", href: URLS.jobs }]}
           />

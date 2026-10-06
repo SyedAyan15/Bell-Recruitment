@@ -5,7 +5,6 @@ import CtaBand from "@/components/CtaBand";
 import FaqList from "@/components/FaqList";
 import PageHero from "@/components/PageHero";
 import ProcessSteps from "@/components/ProcessSteps";
-import RoleGroups from "@/components/RoleGroups";
 import { URLS } from "@/lib/content";
 
 // Copy: "2. Services (Executive Search)" in the client's Website Content document.
@@ -63,41 +62,6 @@ export default function ServicesPage() {
 
       <section className="section section-alt">
         <div className="container">
-          <div className="section-label">Roles we recruit</div>
-          <h2>FMCG roles we recruit in Northern Ireland</h2>
-          <RoleGroups
-            groups={[
-              { label: "Commercial and sales leadership", roles: ["Commercial Director", "Head of Sales", "Commercial Manager"] },
-              {
-                label: "Sales and business development",
-                roles: ["Sales Executive", "Sales Representative", "Business Development Manager", "Business Development Executive"],
-              },
-              {
-                label: "National and key accounts",
-                roles: ["National Account Manager", "Key Account Manager", "On-Trade Account Manager", "Off-Trade Account Manager"],
-              },
-              {
-                label: "Brand and marketing",
-                roles: ["Marketing Director", "Marketing Manager", "Senior Brand Manager", "Brand Manager", "Assistant Brand Manager"],
-              },
-              { label: "Commercial support", roles: ["Commercial Executive", "Commercial Admin"] },
-              {
-                label: "Operations, product and finance within FMCG businesses",
-                roles: [
-                  "Production Manager",
-                  "Product Development Manager",
-                  "Management Accountant",
-                  "Assistant Accountant",
-                  "Accounts Assistant",
-                ],
-              },
-            ]}
-          />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
           <div className="section-label">The process</div>
           <h2>How our FMCG executive search works</h2>
           <ProcessSteps
@@ -123,7 +87,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section">
         <div className="container split">
           <div>
             <div className="section-label">When to call us</div>
@@ -148,7 +112,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-alt">
         <div className="container">
           <div className="section-label">Why Bell Recruitment</div>
           <h2>Why FMCG employers choose Bell Recruitment</h2>
@@ -163,7 +127,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section">
         <div className="container container-faq">
           <div className="section-label">FAQs</div>
           <h2>Frequently asked questions</h2>
