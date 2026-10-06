@@ -40,7 +40,7 @@ export default function CandidateProcessPage() {
           <h2>How does an FMCG recruitment agency work for candidates?</h2>
           <p className="section-intro">
             We&rsquo;re hired by FMCG employers to fill a specific role, so we only put you forward when there&rsquo;s a
-            genuine fit. We don&rsquo;t send your CV out widely and hope.
+            genuine fit.
           </p>
           <ProcessSteps
             steps={[
@@ -50,7 +50,7 @@ export default function CandidateProcessPage() {
               },
               {
                 title: "We talk to you",
-                text: "We speak to you about your career so far, looking at your customers, territories, targets and results, not just your job titles.",
+                text: "We speak to you about your career so far, looking at your customers, territories, targets and results.",
               },
               {
                 title: "We match you to roles",

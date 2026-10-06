@@ -94,6 +94,14 @@ export const TESTIMONIALS = {
     company: "Prep House",
     logo: { src: "/images/prep.png", w: 139, h: 151 },
   },
+  henderson: {
+    quote:
+      "The Field Marketing Team have brought our in-store activities to life with energy, enthusiasm and just the right amount of shopper persuasion!",
+    name: "Julia Galbraith",
+    role: "Brand Development and Marketing Manager",
+    company: "Henderson Group",
+    logo: { src: "/images/partner-henderson.png", w: 249, h: 100 },
+  },
 };
 export type TestimonialId = keyof typeof TESTIMONIALS;
 
@@ -112,7 +120,7 @@ export const CANDIDATE_REASONS = [
   },
   {
     title: "A Name Known in the Industry",
-    text: "We are the FMCG recruitment specialist. It's all we do. Our reputation opens doors that a cold application never could.",
+    text: "We are the FMCG recruitment specialist, and employers know us in the industry.",
   },
   {
     title: "Confidential Career Guidance",

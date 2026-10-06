@@ -100,7 +100,7 @@ export default function HomePage() {
           <div className="section-label">Roles we recruit</div>
           <h2>FMCG sales and commercial recruitment in Northern Ireland</h2>
           <p className="section-intro">
-            Whether a hire works depends on the customers, the territory and the targets, not just the job title.
+            Whether a hire works depends on the customers, the territory and the targets.
             These are the roles we recruit:
           </p>
           <RoleGroups

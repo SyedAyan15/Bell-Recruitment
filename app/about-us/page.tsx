@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const APPROACH = [
   {
     icon: "fa-clipboard-list",
-    lead: "We start with the work, not the CV.",
+    lead: "We start with the work.",
     text: "Before searching, we agree what you sell, who to, the territory, and how success is measured.",
   },
   {
@@ -59,7 +59,7 @@ export default function AboutPage() {
             </p>
             <p>
               Most CVs don&rsquo;t show that. So Julie built a recruitment business around judging people the way an
-              FMCG employer would, not just by job titles and previous employers.
+              FMCG employer would.
             </p>
             <p>
               The business has grown steadily since 1999, built on long relationships with clients and candidates and a
@@ -81,14 +81,13 @@ export default function AboutPage() {
       <section className="section section-dark">
         <div className="container">
           <div className="section-label">What we do</div>
-          <h2>FMCG executive search, and nothing else</h2>
+          <h2>FMCG executive search</h2>
           <p className="lead">
-            Executive search is the only service we provide, and FMCG is the only sector. We find commercial and sales
-            leaders for FMCG businesses across Northern Ireland, approach them directly (including people who
+            We find commercial and sales leaders for FMCG businesses across Northern Ireland, approach them directly (including people who
             aren&rsquo;t looking), assess each one and present a short list.
           </p>
           <p className="lead">
-            Because we do one thing, we know the market: who&rsquo;s moving, who&rsquo;s performing, and what a role
+            We know the market: who&rsquo;s moving, who&rsquo;s performing, and what a role
             really involves.
           </p>
           <ButtonRow buttons={[{ label: "See our executive search service", href: URLS.services, variant: "light" }]} />

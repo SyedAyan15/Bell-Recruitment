@@ -5,7 +5,7 @@ import { TESTIMONIALS, type TestimonialId } from "@/lib/content";
 // `swipeOnMobile` turns the grid into a horizontal swipe row on phones.
 export default function TestimonialGrid({ ids, swipeOnMobile = false }: { ids: TestimonialId[]; swipeOnMobile?: boolean }) {
   return (
-    <div className={`testimonial-grid${ids.length === 2 ? " testimonial-grid-2" : ""}${swipeOnMobile ? " mobile-swipe" : ""}`}>
+    <div className={`testimonial-grid${ids.length === 2 || ids.length === 4 ? " testimonial-grid-2" : ""}${swipeOnMobile ? " mobile-swipe" : ""}`}>
       {ids.map((id) => {
         const t = TESTIMONIALS[id];
         return (

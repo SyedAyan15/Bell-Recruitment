@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
         <div className="container">
           <div className="section-label">First call</div>
           <h2>Employers who go to Bell Recruitment first</h2>
-          <TestimonialGrid ids={["irwins", "gmMarketing", "prepHouse"]} />
+          <TestimonialGrid ids={["irwins", "gmMarketing", "prepHouse", "henderson"]} />
         </div>
       </section>
 
