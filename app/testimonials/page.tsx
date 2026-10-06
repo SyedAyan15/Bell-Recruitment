@@ -82,8 +82,7 @@ export default function TestimonialsPage() {
           { label: "Talk to Julie", href: URLS.contact },
         ]}
       >
-        Send us the job description and we start the search within 24 hours. If a candidate leaves within 90 days, we
-        provide a replacement.
+        Send us the job description and we start the search within 24 hours.
       </CtaBand>
     </>
   );

@@ -22,13 +22,11 @@ const INCLUDES = [
   { icon: "fa-layer-group", lead: "The 5C framework.", text: "Every candidate is assessed on Compensation, Commute, Culture, Career and Competence." },
   { icon: "fa-list-check", lead: "A focused shortlist.", text: "Only the strongest matches, with notes on why each one fits." },
   { icon: "fa-handshake", lead: "Support to the start date.", text: "Interviews, negotiation and onboarding." },
-  { icon: "fa-shield-halved", lead: "A 90-day replacement guarantee.", text: "If the person leaves within 90 days, we provide a replacement." },
 ];
 
 const WHY = [
   { lead: "Founded in 1999 by someone from the trade.", text: "Julie spent ten years in FMCG before starting Bell Recruitment." },
   { lead: "Long relationships.", text: "Many of our clients have worked with us for years, some for over 20, and come to us first when a role opens." },
-  { lead: "Backed up.", text: "A replacement if the hire leaves within 90 days." },
 ];
 
 export default function ServicesPage() {
@@ -119,7 +117,7 @@ export default function ServicesPage() {
               { title: "Shortlist", text: "You see the strongest matches, with the context you need to decide." },
               {
                 title: "Offer and start",
-                text: "We support interviews, negotiation and onboarding. If the hire leaves within 90 days, we provide a replacement.",
+                text: "We support interviews, negotiation and onboarding.",
               },
             ]}
           />
@@ -177,7 +175,6 @@ export default function ServicesPage() {
                 a: "Approaching suitable people directly, including those not looking for a job, instead of waiting for applications. It’s usually confidential.",
               },
               { q: "How quickly will you start the search?", a: "Within 24 hours of receiving your job description." },
-              { q: "Do you offer a replacement guarantee?", a: "Yes. If a candidate leaves within 90 days, we provide a replacement." },
               {
                 q: "What should I give you when briefing a vacancy?",
                 a: "The job description, salary and package, territory and travel, reporting line, what’s essential versus preferred, how performance is measured, and your interview process.",

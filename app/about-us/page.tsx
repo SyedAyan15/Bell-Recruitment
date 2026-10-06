@@ -28,11 +28,6 @@ const APPROACH = [
     text: "Compensation, Commute, Culture, Career and Competence. These decide whether a hire accepts the job and stays.",
   },
   { icon: "fa-bolt", lead: "We move quickly.", text: "The search starts within 24 hours of receiving your job description." },
-  {
-    icon: "fa-shield-halved",
-    lead: "We stand behind the placement.",
-    text: "If a candidate leaves within 90 days, we provide a replacement.",
-  },
 ];
 
 export default function AboutPage() {

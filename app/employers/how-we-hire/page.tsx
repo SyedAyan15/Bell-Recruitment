@@ -139,10 +139,6 @@ export default function HowWeHirePage() {
               <strong>5C</strong>
               <span>Compensation, Commute, Culture, Career and Competence, plus references.</span>
             </div>
-            <div className="aside-item">
-              <strong>90 days</strong>
-              <span>If a candidate we place leaves within 90 days, we provide a replacement.</span>
-            </div>
             <ButtonRow buttons={[{ label: "Send us a vacancy", href: URLS.contact, variant: "light" }]} />
           </aside>
         </div>
@@ -201,7 +197,6 @@ export default function HowWeHirePage() {
                 q: "How do you check candidates?",
                 a: "Through our 5C framework: Compensation, Commute, Culture, Career and Competence, plus references.",
               },
-              { q: "Do you offer a replacement guarantee?", a: "Yes. If a candidate leaves within 90 days, we provide a replacement." },
               { q: "Can the search be confidential?", a: "Yes. Our process is confidential from first approach to offer." },
             ]}
           />

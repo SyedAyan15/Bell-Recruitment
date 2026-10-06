@@ -555,7 +555,7 @@ h1, h2, h3, h4 {
 .callout i { color: #fff; font-size: 20px; margin-top: 3px; }
 
 /* "Do agencies charge candidates?" / "What happens after I send my CV?": two equal cards. */
-.answer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+.answer-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: stretch; }
 .answer-card { display: flex; flex-direction: column; padding: 36px 34px; background: var(--warm-white); border: 1px solid var(--border-light); border-top: 3px solid var(--burgundy); border-radius: var(--radius); }
 .answer-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
 .answer-head .value-icon { margin-bottom: 0; }

@@ -55,13 +55,8 @@ export default function CandidateProcessPage() {
               },
               {
                 title: "We match you to roles",
-                text: (
-                  <>
-                    When an employer brief fits your experience, we call you first and talk it through before anything
-                    goes further.{" "}
-                    <mark className="hl">Your CV never goes to an employer without your agreement.</mark>
-                  </>
-                ),
+                text:
+                  "When an employer brief fits your experience, we call you first and talk it through before anything goes further.",
               },
               {
                 title: "We assess the fit using the 5C framework",
@@ -97,8 +92,7 @@ export default function CandidateProcessPage() {
           <p className="callout">
             <i className="fas fa-shield-halved" aria-hidden="true" />
             <span>
-              That&rsquo;s why people we place tend to stay. If a placement leaves within 90 days, we replace them for
-              the employer, so we take care to get the match right.
+              That&rsquo;s why people we place tend to stay, so we take care to get the match right.
             </span>
           </p>
         </div>
@@ -106,29 +100,6 @@ export default function CandidateProcessPage() {
 
       <section className="section">
         <div className="container answer-grid">
-          <div className="answer-card">
-            <div className="answer-head">
-              <div className="value-icon">
-                <i className="fas fa-sterling-sign" aria-hidden="true" />
-              </div>
-              <div className="section-label">Fees</div>
-            </div>
-            <h2>Do recruitment agencies charge candidates?</h2>
-            <p className="big-answer">
-              <span className="big-no">No.</span> Bell Recruitment never charges candidates. Our fee is paid by the
-              employer.
-            </p>
-            <dl className="answer-facts">
-              <div>
-                <dt>You pay</dt>
-                <dd>Nothing</dd>
-              </div>
-              <div>
-                <dt>Our fee</dt>
-                <dd>Paid by the employer</dd>
-              </div>
-            </dl>
-          </div>
           <div className="answer-card">
             <div className="answer-head">
               <div className="value-icon">

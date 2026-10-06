@@ -49,7 +49,6 @@ export default function HomePage() {
               buttons={[
                 { label: "Hire FMCG talent", href: URLS.hire, variant: "light" },
                 { label: "Find FMCG jobs", href: URLS.jobs, variant: "outline" },
-                { label: "Submit your CV", href: URLS.cvUpload, variant: "outline" },
               ]}
             />
             <div className="hero-trust">
@@ -92,7 +91,6 @@ export default function HomePage() {
           { value: "500+", label: "Placements" },
           { value: "13", label: "Brand partners" },
           { value: "20+", label: "Year client relationships" },
-          { value: "90-day", label: "Replacement guarantee" },
         ]}
       />
 
@@ -208,12 +206,6 @@ export default function HomePage() {
               { name: "Competence", text: "Can they do the job, based on results, customers, category and targets?" },
             ]}
           />
-          <p className="callout">
-            <i className="fas fa-shield-halved" aria-hidden="true" />
-            <span>
-              And if a candidate we place leaves within 90 days, we provide a replacement.
-            </span>
-          </p>
           <ButtonRow buttons={[{ label: "See the full process", href: URLS.hire, variant: "light" }]} />
         </div>
       </section>
@@ -315,10 +307,6 @@ export default function HomePage() {
                 a: "FMCG executive search in Northern Ireland, covering sales, key account, brand and commercial roles.",
               },
               { q: "How quickly will you start the search?", a: "Within 24 hours of receiving your job description." },
-              {
-                q: "Do you offer a replacement guarantee?",
-                a: "Yes. If a candidate we place leaves within 90 days, we provide a replacement.",
-              },
               {
                 q: "Do I need FMCG experience to apply?",
                 a: "It depends on the vacancy. Some employers require it and others consider transferable sales experience.",

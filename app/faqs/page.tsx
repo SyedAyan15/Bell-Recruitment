@@ -23,10 +23,6 @@ const CANDIDATE_FAQS: Faq[] = [
     a: "It depends on the role. Some employers want direct FMCG sales experience and others will consider transferable experience, such as retail or wholesale.",
   },
   {
-    q: "Do candidates pay Bell Recruitment anything?",
-    a: "No. Bell Recruitment never charges candidates. Our fee is paid by the employer.",
-  },
-  {
     q: "What happens after I upload my CV?",
     a: "We read your CV, check it against the roles we’re working on and call you if there’s a possible fit. We talk through the role with you before your details go to any employer.",
   },
@@ -74,10 +70,6 @@ const EMPLOYER_FAQS: Faq[] = [
     q: "How do you check candidates?",
     a: "Through our 5C framework: Compensation, Commute, Culture, Career and Competence, plus references. The full process is on our Client Process page.",
     link: { label: "See the Client Process page", href: URLS.hire },
-  },
-  {
-    q: "Do you offer a replacement guarantee?",
-    a: "Yes. We assess every candidate through our 5C framework to put forward the right person for the job. If the candidate leaves within 90 days, we provide a replacement.",
   },
   { q: "Can you recruit confidentially for a senior role?", a: "Yes. Our process is confidential from first approach to offer." },
   {
