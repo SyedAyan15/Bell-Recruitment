@@ -10,7 +10,7 @@ import ProofStrip from "@/components/ProofStrip";
 import RoleGroups from "@/components/RoleGroups";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import Tilt from "@/components/Tilt";
-import { JULIE_ROLES, PARTNERS, URLS } from "@/lib/content";
+import { BLOG_POSTS, JULIE_ROLES, PARTNERS, URLS } from "@/lib/content";
 
 // Copy: "1. Home" in the client's Website Content document.
 
@@ -328,6 +328,27 @@ export default function HomePage() {
             ]}
           />
           <ButtonRow buttons={[{ label: "See all FAQs", href: URLS.faqs, variant: "ghost" }]} />
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
+          <div className="section-head-center">
+            <div className="section-label">Blogs</div>
+            <h2>Latest from Bell Recruitment</h2>
+          </div>
+          <div className="card-grid-3 mobile-swipe">
+            {BLOG_POSTS.map((post) => (
+              <article className="blog-card" key={post.title}>
+                <Image src={post.image} alt="" width={800} height={500} sizes="(max-width: 900px) 100vw, 380px" />
+                <div className="body">
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <ButtonRow center buttons={[{ label: "View all blogs", href: URLS.blogs }]} />
         </div>
       </section>
     </>
