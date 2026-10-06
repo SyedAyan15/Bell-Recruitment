@@ -4,10 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 const DURATION_MS = 1600;
 
-// Counts up from 0 to the number in `value` (e.g. "500+") once scrolled into view.
-// The server renders the final value, so it still reads correctly without JS.
-export default function StatCounter({ value }: { value: string }) {
+// Counts up from 0 to the number in `value` (e.g. "500+" or "90-day") once scrolled into
+// view. The server renders the final value, so it still reads correctly without JS.
+// Pass countUp={false} for values that shouldn't count, such as a year ("1999").
+export default function StatCounter({ value, countUp = true }: { value: string; countUp?: boolean }) {
   const match = value.match(/^(\d+)(.*)$/);
+  const animate = countUp && match !== null;
   const target = match ? Number(match[1]) : 0;
   const suffix = match ? match[2] : "";
   const ref = useRef<HTMLDivElement>(null);
@@ -15,7 +17,7 @@ export default function StatCounter({ value }: { value: string }) {
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || !match || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!el || !animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     setCurrent(0);
 
     let frame = 0;
@@ -38,15 +40,12 @@ export default function StatCounter({ value }: { value: string }) {
       observer.disconnect();
       cancelAnimationFrame(frame);
     };
-  }, [target]);
+  }, [animate, target]);
 
   return (
     <div className="stat-number" ref={ref}>
       <span className="sr-only">{value}</span>
-      <span aria-hidden="true">
-        {current ?? target}
-        {suffix}
-      </span>
+      <span aria-hidden="true">{animate && current !== null ? `${current}${suffix}` : value}</span>
     </div>
   );
 }

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bell Recruitment — FMCG Recruitment Specialists Belfast</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --burgundy: #791416;
+  --burgundy-dark: #5a0f11;
+  --burgundy-deep: #3d0a0b;
+  --cream: #FDF8F4;
+  --warm-white: #FEFCFA;
+  --gold: #C9A96E;
+  --gold-light: #E8D5A8;
+  --text-dark: #1A1218;
+  --text-body: #3D2F38;
+  --text-muted: #7A6B74;
+  --border-light: #E8DDD5;
+  --surface: #F5EDE6;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cream: #1A1218;
+    --warm-white: #221A1E;
+    --text-dark: #F5EDE6;
+    --text-body: #D4C5CC;
+    --text-muted: #9A8B94;
+    --border-light: #3D2F38;
+    --surface: #2A2026;
+  }
+}
+:root[data-theme="dark"] {
+  --cream: #1A1218;
+  --warm-white: #221A1E;
+  --text-dark: #F5EDE6;
+  --text-body: #D4C5CC;
+  --text-muted: #9A8B94;
+  --border-light: #3D2F38;
+  --surface: #2A2026;
+}
+
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: var(--text-body);
+  background: var(--cream);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-dark);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--burgundy);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo { height: 48px; border-radius: 4px; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .3px;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--burgundy-deep) !important;
+  padding: 10px 24px !important;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  transition: background .2s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+
+/* ─── HERO ─── */
+.hero {
+  background: linear-gradient(135deg, var(--burgundy-deep) 0%, var(--burgundy) 50%, var(--burgundy-dark) 100%);
+  color: #fff;
+  padding: 120px 24px 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(201,169,110,.06);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.03);
+}
+.hero-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  color: #fff;
+  max-width: 720px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 600px;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 40px;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-gold { background: var(--gold); color: var(--burgundy-deep); }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.4); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-burgundy { background: var(--burgundy); color: #fff; }
+.btn-burgundy:hover { background: var(--burgundy-dark); }
+
+/* ─── STATS BAR ─── */
+.stats-bar {
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 48px 24px;
+}
+.stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--burgundy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+
+/* ─── SECTIONS ─── */
+.section { padding: 100px 24px; }
+.section-alt { background: var(--surface); }
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--burgundy);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.section h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+.section-intro {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+
+/* ─── VALUE PROPS ─── */
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 48px; }
+.value-card {
+  padding: 40px 32px;
+  background: var(--warm-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  transition: box-shadow .3s;
+}
+.value-card:hover { box-shadow: 0 8px 32px rgba(121,20,22,.08); }
+.value-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--burgundy), var(--burgundy-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 20px;
+  color: var(--gold-light);
+}
+.value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.value-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+/* ─── PARTNERS ─── */
+.partners {
+  padding: 64px 24px;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--warm-white);
+}
+.partners-label { text-align: center; font-size: 13px; color: var(--text-muted); font-weight: 500; margin-bottom: 32px; letter-spacing: 1px; }
+.partners-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 48px;
+  align-items: center;
+}
+.partner-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: .65;
+  transition: opacity .2s;
+  white-space: nowrap;
+}
+.partner-name:hover { opacity: 1; }
+
+/* ─── SERVICES ─── */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+.service-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(121,20,22,.1); }
+.service-header {
+  background: linear-gradient(135deg, var(--burgundy), var(--burgundy-dark));
+  padding: 32px 28px;
+  color: #fff;
+}
+.service-header h3 { color: #fff; font-size: 1.5rem; margin-bottom: 8px; }
+.service-header p { font-size: 14px; color: rgba(255,255,255,.7); }
+.service-body { padding: 28px; }
+.service-body ul { list-style: none; }
+.service-body li {
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--text-body);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.service-body li:last-child { border: none; }
+.service-body li::before { content: '—'; color: var(--burgundy); font-weight: 600; flex-shrink: 0; }
+
+/* ─── VETTING PROCESS ─── */
+.process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 48px; }
+.process-step { text-align: center; position: relative; }
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -10px;
+  width: 20px;
+  height: 2px;
+  background: var(--gold);
+}
+.process-step:last-child::after { display: none; }
+.step-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  color: var(--gold-light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.process-step h4 { font-size: 1rem; margin-bottom: 8px; font-weight: 600; }
+.process-step p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ─── TESTIMONIALS ─── */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+.testimonial-card {
+  padding: 36px 28px;
+  background: var(--warm-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.testimonial-author { font-size: 14px; font-weight: 600; color: var(--text-dark); }
+.testimonial-role { font-size: 13px; color: var(--text-muted); }
+
+/* ─── WHY CANDIDATES ─── */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+.why-card {
+  padding: 32px;
+  border-left: 3px solid var(--burgundy);
+  background: var(--warm-white);
+  border-radius: 0 12px 12px 0;
+}
+.why-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.why-card p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+/* ─── CTA BANNER ─── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--burgundy-deep), var(--burgundy));
+  padding: 80px 24px;
+  text-align: center;
+  color: #fff;
+}
+.cta-banner h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; max-width: none; }
+.cta-banner p { color: rgba(255,255,255,.75); font-size: 17px; margin-bottom: 32px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ─── CONTACT ─── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 48px; }
+.contact-details h3 { font-size: 1.4rem; margin-bottom: 24px; }
+.contact-item { display: flex; gap: 12px; margin-bottom: 20px; font-size: 15px; }
+.contact-icon { color: var(--burgundy); font-weight: 700; width: 20px; flex-shrink: 0; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--warm-white);
+  color: var(--text-dark);
+  transition: border-color .2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--burgundy);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--burgundy-deep);
+  padding: 64px 24px 32px;
+  color: rgba(255,255,255,.7);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+.footer-col h4 { color: var(--gold); font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 16px; letter-spacing: .5px; }
+.footer-col a { display: block; color: rgba(255,255,255,.6); text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color .2s; }
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .values-grid, .services-grid, .testimonial-grid { grid-template-columns: 1fr; }
+  .why-grid, .contact-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: 1fr; }
+  .process-step::after { display: none; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 80px 24px 64px; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .hero h1 { font-size: 2rem; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAArKklEQVR42u2dd7gU1dnHP2fa1tvvRemCxIIFKxZsxIjYjUaCERGNsRti8rMbNTGJidFoFEVjF7uCmmiUiKAi3QqCSO/t9rJ9Z87vj5nde/eyt4AgiOfzPPex7OzszJnznfO+73nPe8SN5V0kCoUiL5pqAoVCCUShUAJRKJRAFAolEIVCCUShUAJRKJRAFAolEIVCCUShUCiBKBRKIAqFEohCoQSiUCiBKBRKIAqFEohCoQSiUCiBKBRKIAqFQglEoVACUSiUQBQKJRCFQglEoVACUSiUQBQKJRCFQglEoVAogSgUSiAKhRKIQqEEolAogSgUSiAKhRKIQqEEolAogSgUSiAKhUIJRKFQAlEolEAUCiUQhUIJRKFQAlEolEC+Vwj17BWdwGjrA6nrSF0HKXfKG5dSIoQnE9G+XITYxnIS4tu4QaSUO+3z25bPQtg2wra3QCBSIjUNxzDAcXaqxkBKHNtG6Bp22nY7v5SAdMeVTMdq2RxI9+M8Imujd+Y9vuPvNbf/loo987MgEZqObhoYloVmGEgpkdIBR4llcxtKQ3MchJR5X1zGtnxQ3319CBKRCMPuuYv9TzmFaF0DEkm0thYnnUJoOtKxcdLpnO/Ztp3zopBe29hpGylbmWtCuOew7bxmnITNzp+jJglOG2+zlkdLu/l60skEyUiESF09TVWV1K5ZS83KldSuWUOkuhqh61h+P4bP54plZ3rpbYORdqtMrJ21MTTD5MuJ71K/YSNWIEDvQw6m36CjdrpbTcaibFq8mGUzZ7Ns1mxWzvmE6lWr0A0DKxRym0MJpeOX6o3lXWS+juRYlmti7YSjSLypiXQyiSYEmmGw9/E/5twH7qegS5c2fQ7HcdAN931ip1JE6+pIJxLuKK3r6KaJYVlYwSCakfvesZMphCbyDuGxhgaEACsYckeW7DESTTcQmpZrronc6xMChKZ3eN8NmzYy763/MnPcc6yeOxdN17ECgQ5Hqx+CD6KlUmipVN7n84MTCIDQtBwHPWHDRg4d9jNGPfmE65S1aqiMQ1+3bi0fPPIvls+aTbS2llQs7grE0NEtC9PnwxcOU7hLF7rvuy/9jhpEt/374AuH3fPYNkLXc/yGqmVLef2W31O1cjX+grBnmglXIIaBEJsHGjVdy3nAhs9HsLiIij596HXwwfTcf3+KunVzhZ22s+fKmGOfv/EGE++6m42LlxAsKsL5ITvzSiCdiygJ4HdTJtFl935Ix3Hf3J4ZIjSNZTNn8vTFv6J65SpMvx9N17NCkgCO6wg7toNjp3EcBysYYJd+/dj7+B9z1C9/SWmvXnnPvXHRIp655FKWz5pDoKiw+a0uZX5fv3UQwfMrMqNcUddd6X3QQRzys7MZcMYZ5iiWTiOEQPME2lRVxVt/+jPTn34GX7jAi19IJZBW6EcHQ7fnfQa6jtR+GNMkQtNIRKPse9KJlO+2W04nxnOqx116GevmL6CwogJN1zf/M1qYWYEAViCApuk0bKpk8YdT+fw//yFQUEDPAw5wz++NVNK2CVdUsP/JJ7No6odEa2qxQiF0w0C3LIxO/Jl+P6bfjxUIYFgWyUiU9Qu+4rM3/s2K2bPZdc89KO7WLTsSOo6DLxxm36FD8YUCfDV5MppufDvh5++gQITjIBxHCaQ9v8ROpTjknLMp79PH7Uia1mL0mMG7/7yfQLgQO51ue1T1TBXZIlSsGwZWOEyyKcLnb7yBbuj0O+qoZpFoGk46jb+ggO777svHL7+SPU9n/2TL35QSTdcxA35Mn48NCxfy2euvU9a7N93690c6DpquIx0H6Tj0PfwIrECABe9OwvD5fnimVgcCUakm7Qa93M6yfNZsUtEYaGKrzuGk0+iWSai0lLf+9Bc+fuXlrABdH8bAsW36DBzIwOHDiDU0ZE2hrb1ux3ZDzYHiYtLJFOMuvZy5b76J8MQhNA3NE+ePr7qKI0aOIFpX941+d2dECaQT1G/Y2GJCcSs7reMgpcTwB5h41z1E6+tyzpn592MuvYRQaak7Um0DnHQaw7IQus5L1/yOymXLmsUpRFYwp/7+FrrutSepWCzHvFQCUbRregHEmxq3SaeRjoMVCLDh66/59NXx4PkDGT8IoEu/H9H7wANIxeLbrKM6to3l99NYWck7f/3rZvcopSRUWsbgK68gnUxu+9QaJZCdGzuZ3IYOrDu/sejDD3OEAe5ci9A0eh6wP+lkYpt2VNvzc+a+9TarP/88x8QTmoaUkv1OPpnS3r1IxRNKJEognXPgXDPF2WbZv9Jx0C2TqqXLSUYj2Td4S7rvt5/rSG/rh63rJCIRvpo0KcfHylxDuLycvY8fTDIaVWaWEsiWO+vbsqM21VQTravPa9KV9uqFFQzm5Ftts9FL01k6YyZuUqPW8iZBSvY45lh0QweV16gEsgPE5pk0qXicVCzW3Dlb4C8sxPT7so70NvttR2L4LDYtWUK0ti5n9BLCTYUp2203fOEwtp3+Yc6LKIF8R4TiOG4KehsjjJtiIre5ODVdJ1pbR/2GDbni9MQQLC7GVxB2Q8HqMSmB7CCbDd000U0r78exunpScS+KtS3NOylB07BTKZKRpryH+IJBTJ9fZfoqgewgvx837BooKsJfWJjz9s6YO+vmLyDR2LRdJ+3a0p2m627msUIJZMcoRGCn05T27kWwuCjHOc/8c/FHH23VrH1nlaHpuptWkodUIo6dSqkwrxLIDtKHppFOJOg7cCBCaNnM3UxuVt26tSz+8EM3irWNzRwhBI5t4ysooHCXXXJGr8yQEmtoJOGFeVUgSwnkWx48BOlkkuJuXRn4i3OzgskIBCF47777qVu3AcOytn36efe7FX37UFBRkTNqZWisrCTe2Oiad6rggxLIt9rYhkGsro7jLruU0p69cGx31HDSaTTD4KtJk5j+zDj8hQXZFJRtLVA7laLv4Ye5WcQtVhNm/Z8v523TNJfvO4Zqgm/HrBKaRsPGjRxyzs847oor3JWDXjatZhisXzCfF3492k0g1ARyO1QgkY6DGfCz90+O32z00DxBLJzyAZqmMnrVCPItmFOapqHpOqlEgkhNDUeMHMF5Dz3Y7CBLdynsqs8+5dFfnE9jVTWmZW0XcWi6TrypiT2POZq+Aw/LrnnJmnfApiVLWPnxJ1jBgArzqhFkO71xdB0pJXYqRTqRwEmn2WWPH3H86F9z+IgR2bpcmRDu7Oef443b/kisvh5fMLh9iih4Zpzp93HSDddnU9xbhpeFpjHvrbdoqq4mWFysijkogWzrTgiO7RCrr0fTdQp33YVeBx7EPkOGcMCZZxIsLs4uudV0nTVzv+C9+x/gs9fewPD5tluFkcyqxUhdLWfe8Ud6HXRw7rp479oaN21i2tNPY/rVJKESyHZ4Q0vbxl8QZtCFF9DvyCPoOWAAxd17ZA9xbBsnnWLRBx8w/ZlxfPbav3HsNIVduqDp+nYRh+alsTdVVzP4yss5fvRoHMdBa+F7SNtBM3QmjxlD5ZJlhMrK8hS2UwJRfMO3dCqZZNfu3Tnxd78lWFKa15GXUlLSqxeHDjuHir59WfnxJ6xbsNCbHJOubd0JhZIRKI5jc/KN13PyTTe569GFaJHG7wYIFk5+j6mPPU5AmVZKINsDNzoUYP2Cr/jb0cdRtltvirp0oes+/ekz8FB22XMvCrt0wfQH6LrX3nTda28GnH4Gjm2z9ssv+ey115jz0svUr9+IPxxG6NqWmTlehZRMdm4qFiMVT9C1/16c8Yfb2OfEoc3FuluJY9PixTx/9Wik436uzCslkO2kEolmmkSqq6lfv941qV4dj+nzUdytK9333Zc9jj2GAaefRtGuXbOOS88BA+g5YABHX/xLPnr8CaY+9gSJSAR/2Csi5/kQbf+sWxQilUhgp9NoukbX/v054vwRDBw+HH9hYW7BOm9tvGYYrJv/JY+PHEXjpkp8oZAaPZRAtr9IdNNEt6zmonJS0bipknlvv8MXb77F5AfGcNDZZ3H0xb+kpEdPt6AbUNKjJ6fddhv7nXQSE266mRVzPiFYWkIyEiUVj22+NsMrRq6bJsGSEnrsty89DhjAHsccw56Dj8MKBLO+T2Z5rfTysATw+RuvM+HGm2isrFLiUAL5NjUiN6uIqJsmhs8CBE1VNbz7j/v45JVXOeWWmxl47rlutXavA+82cCBXvfE6L15zDbOee4E+Aw9lz+OOQzcNktFotgB3oKiQcEU5Zb16U963D8Vdu2XLi0op3drDmobIVIAUbkHTjV9/zeQHxzD7+ZfQTBNfKKjEoQSy40Ujba+QnGkQKisjUlPLs5dfwbr58znjjj9mo06ObWOFQpz/yCPYqTTlfXpz2q23bnHQwLCa15pEa2tZM28uH7/8Ml++PZFITS3+ggJ3fsRWPocSyHdNLOk0umUR9Pl4997/IqXDT//8l+wEYmYS7/xHHubpiy/myVGjOPNPd7gmWSYVPVtTWICAxk2bvGW8Ueo3bKR65Uo2LV1K1fIVbFq0iOpVq0jF4vjCYQJFRe6ooZIRlUC+y5EvKQQFFRVMfuAhuvbvz+HnjchO4jmOg2FZnP3XO7nzyKP4xwkncvptt3Lo8OHZ72dWHEpgzdy5TLjpJqqWr0Q3Tc8ccxMkDZ+FYfkw/W4KiTKpOo/KxdrBTr2UEisUYuJdd9O4cWN2viRjbhV36845d/2NurXreO7Kq3n5t78l0dTUnI3rjST9hwzh4mfHsfuRR5CKxymoqCBcXoa/sCCbOu/Y9g+zgrsSyPd7JLH8fqqWr2Da009n/1/GJ5FScuBPf8ruRx6Bbpp89PiTPHzOMGpWrczOwGfmL3bda28ue+Uljhh5Pk3V1VkzSolCCeR7jeM4GD4fC/73LulEonmxktfxddNk/1NPIRmLUVBRwbJZs3nwp2ez5osvmkXihXJNf4Bz7/8np95yI/GmxpysXYUSyPfWcTd8PiqXLadqxYrs/8tEpAD2OeEEQiXFJONxgkVF1KxazSPDz2XpjGlouu7Op3gjjuM4DPm/axl2999JJeJZASmUQL63voim60Tr6qhaviyvQCp2350uP/qRm0LvOPhCISI1tTx+/igWffgBureFQiblxLFtBl10Eefedy9OKoXjCUihBPK9JLP0tm7t2tYfIB03NaSkeze3o3sCsAIB4o0RnrroYpbNmpnjk2RGlYG/+AXnjrnfyyZWIlEC+Z7Tul6vN8QA4C8qynG4XZH4iTc28cTIUaz1dq/NhHF1w8BJpznknHM594H7sFMpZW4pgXyvh5K2P8pTDDQzkkRq63h85AVULV/WPNmIt3tVOs0h5wxj+P33kYrHsyWGFEog3y9XBAgUFbX5ebypKf8e7raNLxikZvUanrzwlzRVVeXd4m3g8OGc8/e/kohEOhSjQgnkO+eo64ZBibe/ec7I4ZlEkUzHzzOv4dg2/sJCVn32Oc9dcSXpVDLH2c+YXoMuvIjTb7uFWEODGkWUQL4/ZpVj2wSLCindrVfWaW/ZwSPV1VStXIFuWW3mUDnpNOHSUua9M5EJ19+Yk+beUiTHj/4NJ1wzmmhtrdq0Uwlku7oF2+j8bsXD0t69Kd+tT25AvCW4Kz/7jNrVazusuGh7Ipn6+BN88PDDOf5IZjRybJvTbr2Voy68gEhtLZqhRKIEspVmj2vD69u1Tq3QNJLxOD86+iisQDB34xwvc3f+xInZEG9HOI5DoLCQN267nQWT3s2JbGXqdUngZ/fczYDTTiFaW5ddS6JQAtli2jNrtsXoYadSFFZUMOjCUTlDViba1Fi5iQXvvtv5gtZeeonQdF749W/YuHhR7kjibTmtGyYjxj5E38MGEqtTIlEC2eIBxBVFoKBwuxUz0AyDaG0tx1z6Kyr67u7udNtKIFPGPEjV8pUYPl+nEw+l42D6fNRv2MgLV4/ORq6yM/Sef+IvKGTk44+yy557kGhqUj6JEsiWU9Stq9uxtqUzIgS6adJYWcmA00/l+F9fnSOOTNWRZTNnMPXxJwgUFG7xOg7X8S9iybQZTLjpppzQb0t/pLRHT0b+62FCpSVusqSaSFQCac/naM3uhx+OLxSEbTCKZNJAcBwaKyvZZ+gQzn94LKY/kM2jsj1xVK9cwXNXXImdSiP0rXtUdjpNuKyUGc88y7Qnn9isSF3mv3vsP4ARYx8EBLaXrqJQAsntuBkb3OscmTq7vQ8+hD4DD6WppgbDstB0tzCbaFGPKu+fV8BN0/Xsn51OE62rA2Do9dfyq2efJVBUnDV9HNtG9+pVPXbe+dSsWoMV+GbFpKXj4AuGeP3W21kxZ05ekdjpNHv9+HiG3XOXuxpR4fqfRwdDt+dtVF1H/gCG2szEm+X385PfjCZYXOw6udmdl0DTNbrvtx9Lp02jeuUq7HTaTf7zlq+2+ZdKYycTpGJxUvEY6WSSgrIyDh0+jJ/97U4OGTYsO8uNt4pQaBpfvv1fnrnkMiqXr8jWx/rGb0JdJx1PsHTGDAaccRr+goKclJPMCsYeAwYgkCyY9B6+YHDnX2wlBMJxEG1suS1uLO8i85kajmXhGMZOubA/82Z3K607NGzayHGXXcLw++7Lu8AoW+C5spKZ455l5aefUr9+vev4yvY6pUagsJCCLl0o2603PQYMoN+RR1LU1S0cl04m0Q0j+3vVK1Yw5cEHmTHuWSQCy+/fpuvHMwGBA848jQufeDK7tLflNmyOI9F0jeevuprpz4yjoKwMe2eu1SsEWiqFlkopgWQaJNHYRDqZQGgaweIiDjzzDH765z9jhULZEGk+M6VlGDSViJOKxTt4a2uYgQC6YbZ73Lr58/l0wgRmPvc8Des34i8q3G5lQDVdJ1JTw8k33chJN1yPnU6jt7ivTF2vdDLBY+edz1fvTSZUWoqdSimB7OwCEUKQTiTpP+R4+g0aRFHXbvQ68ABKe/X6Vq8j3tBI7drVLPloGl++8w4rP/2caE0NVqaA9fasOiIEAkEyFmXE2DEc/LNz3AnITIE5maumNFZWMvbss1n9xTxCpaXInbHoQwcC+WHNDAmBbafpe9hh7DN0CHYyRaS2ltq167y22YLIjZQIXUPTtXaDYqlYlEhNDXXr1lO7ejXVK1dRvWIltevWEKmpQ9rN+x0EAkWFaJaFpukkY1Gi9fVIKZG2nXepqJQSx+t3um7gOA5C15GOnfVlstcoXBNJSpC2TdpxAO8eWzwj6TjZsC7Sv/5v2w7poYNKIFuKbpoEc4p7uA59MhqlZuXKrAkkNI1kLIYmtDbLxuqmiW5ZOe0kbTv7k47NjxD0TUexU2mScTelXeoavmDANdFM001KFALp1MPm2yk0TUc3DXx5fBy3fE+aVDzR8b0JgaMJNEPH8SYlW6pESDeNPp1M5pyb7DV5I1VeZcrsORwnZ5JT03U0L9Naz8x2C3eCsO3zyqSxq1Fku7sFW9EPdvW828+Dcv/OJxDpOMhs3a32ukWmk5o+lz2FbpqESkuy3/oGDYaU7v0ITcNOJ0nGolihILpl5p4bYZcWNqe1ykxqv92lqJn3t/S12ipvrXu1V/M8WfY8uqoIsEVmjGilJKK78qXtj5Z1uw6OlSJ7j3JLwsst7k94+5trtDJfstCE98KxHcl21sfrK3p4mbuCHduU3r20WCzU0nM0tCqHkNfB78xZyfuuytm5+2qkLdpY15LZ/D7+zztPScpuVdL0aEZ1CG/x9bOoTPY3K7aJx2B5Lsda/6UbN5d6d2jblJqbX3WbKf1a5Vdpje3p4dcP3Wt9v80BLIl/l79bYXm/rfIpRKIG0PxZ0YhTQdB3Dcn0DKxBA1zXiTRHS0dg2v67MexVNR2h6u01upxIYhkGosBgpJYlYhHQi6UbAFEogW3tOp+PRKEOvvJrSHj1IRqNYfj+GoZOKJ/CGhyz167dQtWIFumm6GcOxGLG6WpJNjWiaxPD53ASQNvJCvPvtYHRqf1QTugaOzZKZ01lTXMiQK6+kh2eg0DXSiQQgWbtkKW/f9Q+iTU20LMxUCNg1Y6YwOq3VKwRRt24di6dPwzBMhKGxbMYsVn36Kf2GHEtR115ULl3m+i7ePIj0TPT6TRtZ8tH0Zhuk9TIABz4/6Rhv/fVuNi5ZTKCgEJnNqxIEi4tJp1J89e67OGmHtOcTCeEmHmp6c6dsvQbCZhNvLVNR2rxPd/NVt2SdVyBaOxfcst+pIiLfuJN9dn80/X6SsTiR2ro8bx7RIttZ03S3HFRGE63PaXvl+VyT7z1G2m09t6LVd/MFTVr7Ha2C8C3PTwhsW+KkEm4OV0kJhs+f/ybSdd0dNaRsHuV0ndQsQqy+jjfv+ju7HnwQpb16kk7Es5tHSekg9FbLXYXAcWy3zMJ3MOghdB1pO6TiCYSmYfn97S5U63IxFQ/d3TusdBqJRGqSZDRC7Zq1LJk+g6XTZ7Lmiy+orNiNYcPP8bbMyA0k2J45qmmCVnW+hBDopgF0HOqVEtKxKC9eO4YB+57EoOHDSESjzH/nHfxhP4a/3PXZHK+2cI53pbl7B8n2S9ULgeNIrFABi+a9y5MXXkH5brvTuGkjhm6QTsTdUUXTMEyTnP3rhKCwSxcqa2vy79KrCTQh3JJCUrquVnomFB4kEokkC6d9xMT7HqRy6VIIBpBuCLf5mtwNQfNsouTVPE/YdhIxO0Z0SxqOA6dczMVPP0P/Hw/hgJ+cyJcTJpFOxAmXlROprW3bGfbOqcmbO5N7gkyu3Y+JRSom66+9gxpjHePOv97D60wtJJeKeeaNhs4kkYTuYPh+FXSooqKjI/6YUAmwb3e/DHPC7O9yayR6kN3okmsq67KJDv0hK3JpXYpv6dtmQshLIlhhIkZoa3v37Azy4fAYnXns1+5x4IjWrVhGtq8NfWIjp87dpnglNo2HjRl679Q6mPvE0oZJi5A/Sj1cCUXQOKUlGo+xx7LH8bNw4NA0aSosJlZUy+IrLmPn8i0Rra3MK1LoLsBwkkvfuG8P8/73LUxdeRKCoeJtq/w5GsX6gItlxJKNR+h4xiFNvu41QSQkbvl7snle6rIg7p+E4+MOF+EOFaIbOJ+PHk04msdNpJQ7FDhSJl68Wb6jnhN9czW//+x9CpeUk4zE04e0WkplG6cD3k42N6AYkE3ESTRFMn589jj0Gz18Q4TfNu1sFCKx+k1ItEoeqOPLxR5n6+FMEioqyIew2y1UK4U6aCbAC/pzXMz6LgExB3x/BPMh3RSBq/qOTRKpruPG3d7B27lekU8l2R0DpOJj+APPfnUT1qjUMPPdchDAQQicsJU46TWPdJjYuXE/lwqVULl1OqqmB3gcdyO5HHsWm5cuJ1je4kzSaRqCwCE0I4g0NVK1aQ/XK1dStW0+0tpZ0IommCYJlpZT27EFJr14U79qNgi5d3DW/iUTWSW+JJnbaMK8SyHenDY1EUxP7nHAiR19ysbuwysqzbFcINixczGeT3uGDxx4j0dSE5fPhD4XwF4YJl5YR61dBw8YN1K9fR826tTRu2kSioYFYfR3xymp0w8DyBygqL6O0e0969u9L97370aN/f4o7GHqkdGj0JjnzFhVt33GWjuO6V0J4YeZUh+4O+FVklEC+bUMJTUMi0U2LaY8/gW6a7DPkBBJNkW1apEu6m1olIhEaN1W52ce1ddSsWkX9+nU0VddSs3oNjZsqidbVEq+t82qu2QjTwvD7CRQX0XVXP3scdQQH/vR0KvrsRqCgoMN7sBMJ1syby7ynn2XW+PFYIb+bm6BpJKMxTrnlRgafexbf+OlEgng05jrxUlK7ei3Txj3Lys8+d08kNHeiUOY/B11IpKahUAL5rgjFcRysUIhVn33OhBtuptu+/el18MEYpuGmhTgO6WSCSG0NicYIyWiMZCRKoqmJZCRCKhYnHY+RSiaRaQdH15GODcLYLC1F0zXijY3Url7NZ6++xtR//gvLH6TH/vvR67DD8YXDeW7FdE0zTUMT3sSpphGvr+OTCROYPu55GtdvJBgKI9C8TYskge8qj8vNVpBeFq+xdh11a+OAw6sznsmkd9LpH27thxKI4vsjkPT3d0ZeoBpJ8d3nByQOxf8DzCR7yGxMV0UAAAAASUVORK5CYII=" alt="Bell Recruitment" class="nav-logo">
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="#cv" class="nav-cta">Upload CV</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow">FMCG Recruitment Specialists · Belfast</div>
+    <h1>Northern Ireland's Specialist FMCG Recruitment Consultancy</h1>
+    <p>For over 25 years, Bell Recruitment has connected leading food, beverage, and consumer goods brands with exceptional commercial talent across Northern Ireland, Ireland, and the UK.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-gold">View Open FMCG Roles</a>
+      <a href="#contact" class="btn btn-outline">Hire FMCG Talent</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div><div class="stat-number">25+</div><div class="stat-label">Years of FMCG expertise</div></div>
+    <div><div class="stat-number">500+</div><div class="stat-label">Placements made</div></div>
+    <div><div class="stat-number">13</div><div class="stat-label">Trusted brand partners</div></div>
+    <div><div class="stat-number">20+</div><div class="stat-label">Year client relationships</div></div>
+  </div>
+</div>
+
+<!-- VALUE PROPS -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-label">Why Bell Recruitment</div>
+    <h2>FMCG Recruitment, Done Right</h2>
+    <p class="section-intro">We don't just fill vacancies — we find the people who move your business forward.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Deep FMCG Expertise</h3>
+        <p>Founded by an industry veteran with a decade at Pepsi, Budweiser, and Ballygowan. We speak your language because we've worked on your shop floor, in your depots, and across your sales routes.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>25+ Years of Trust</h3>
+        <p>Our client relationships span decades, not campaigns. From Henderson Group to Irwin's Bakery, the brands that define Northern Ireland's grocery landscape choose us year after year.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">👤</div>
+        <h3>People-First Approach</h3>
+        <p>Every candidate is personally screened. Every brief is personally managed by our founder, Julie Bell. No call centres — just a recruitment partner who knows your sector inside out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="partners-label">Trusted by Northern Ireland's leading FMCG brands</div>
+  <div class="partners-grid">
+    <span class="partner-name">Tennent's NI</span>
+    <span class="partner-name">Irwin's Bakery</span>
+    <span class="partner-name">Henderson Group</span>
+    <span class="partner-name">Thompson's Tea</span>
+    <span class="partner-name">Kestrel Foods</span>
+    <span class="partner-name">Richmond Marketing</span>
+    <span class="partner-name">Whites</span>
+    <span class="partner-name">Prep House</span>
+    <span class="partner-name">GM Marketing</span>
+    <span class="partner-name">Courtney &amp; Nelson</span>
+    <span class="partner-name">Mulrines</span>
+    <span class="partner-name">WNR</span>
+    <span class="partner-name">Dan</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="section-label">Our Services</div>
+    <h2>Specialist FMCG Recruitment Services</h2>
+    <p class="section-intro">Whether you need a senior leader or a high-performing sales professional, our FMCG expertise delivers the right people, every time.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-header">
+          <h3>Executive Search</h3>
+          <p>Senior leadership recruitment</p>
+        </div>
+        <div class="service-body"><ul>
+          <li>Deep FMCG market intelligence and targeted headhunting</li>
+          <li>Consultative brief development aligned to your strategy</li>
+          <li>Confidential process from approach to offer</li>
+          <li>Commercial Director, Sales Director, MD-level roles</li>
+        </ul></div>
+      </div>
+      <div class="service-card">
+        <div class="service-header">
+          <h3>Permanent Recruitment</h3>
+          <p>Commercial, sales &amp; operational</p>
+        </div>
+        <div class="service-body"><ul>
+          <li>Detailed brief and role scoping with your team</li>
+          <li>Every candidate personally interviewed and assessed</li>
+          <li>Focused shortlist with detailed candidate profiles</li>
+          <li>Full support through negotiation and onboarding</li>
+        </ul></div>
+      </div>
+      <div class="service-card">
+        <div class="service-header">
+          <h3>Field Marketing</h3>
+          <p>In-store activation teams</p>
+        </div>
+        <div class="service-body"><ul>
+          <li>Brand ambassadors and promotional staff</li>
+          <li>In-store merchandising and planogram execution</li>
+          <li>Product sampling and tasting event teams</li>
+          <li>Mystery shopping and retail auditing</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VETTING PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Quality Guarantee</div>
+    <h2>Our 5-Stage Candidate Vetting Process</h2>
+    <p class="section-intro">No candidate reaches your desk without being thoroughly vetted. Our multi-stage screening saves you time and reduces hiring risk.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>CV &amp; Career Review</h4>
+        <p>Full career trajectory assessment across FMCG roles, brands, and commercial results.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>Personal Interview</h4>
+        <p>In-depth interview by our senior team — never a junior screener or automated system.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>Competency Check</h4>
+        <p>FMCG-specific assessment: negotiation, category management, P&amp;L, team leadership.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Reference Verified</h4>
+        <p>Thorough checks with previous employers at multiple levels for a complete picture.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <h4>Shortlist Calibrated</h4>
+        <p>Detailed profiles beyond the CV — assessment notes, salary data, and cultural fit analysis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CANDIDATES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">For Candidates</div>
+    <h2>Why FMCG Professionals Choose Bell Recruitment</h2>
+    <p class="section-intro">Over 25 years, we've become the name that FMCG professionals across Northern Ireland turn to for their next career move.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>The Strongest FMCG Network</h3>
+        <p>Our reach across food, beverage, bakery, grocery, wholesale, and distribution is unmatched. When a role opens, we often know before it's advertised.</p>
+      </div>
+      <div class="why-card">
+        <h3>A Name Known in the Industry</h3>
+        <p>We are the FMCG recruitment specialist — it's all we do. Our reputation opens doors that a cold application never could.</p>
+      </div>
+      <div class="why-card">
+        <h3>Confidential Career Guidance</h3>
+        <p>Every conversation is confidential. Julie Bell personally manages senior relationships with candid, market-informed career advice.</p>
+      </div>
+      <div class="why-card">
+        <h3>Access to Hidden Roles</h3>
+        <p>Many positions are filled before they reach a job board. By registering with us, you see opportunities the open market never does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-label">Client Testimonials</div>
+    <h2>What Our FMCG Clients Say</h2>
+    <p class="section-intro">We don't ask you to take our word for it.</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"We have used Bell Recruitment as our recruitment partner for many years, and they have always provided us with excellent candidates for a range of commercial and operational roles."</div>
+        <div class="testimonial-author">Jeff Tosh</div>
+        <div class="testimonial-role">CEO, Courtney and Nelson</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Bell Recruitment are my go-to company when it comes to recruitment for commercial roles in our business."</div>
+        <div class="testimonial-author">John Hopkins</div>
+        <div class="testimonial-role">Sales &amp; Development Director, Irwin's Bakery</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"The Field Marketing Team have brought our in-store activities to life with energy, enthusiasm and just the right amount of shopper persuasion!"</div>
+        <div class="testimonial-author">Julia Galbraith</div>
+        <div class="testimonial-role">Brand Development Manager, Henderson Group</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Bell Recruitment is our go-to recruitment partner because we know they will always deliver the resources we need, when we need them."</div>
+        <div class="testimonial-author">Gerard McAdorey</div>
+        <div class="testimonial-role">Managing Director, GM Marketing</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"I have always used Bell Recruitment for all our commercial recruitment requirements."</div>
+        <div class="testimonial-author">Paul Bell</div>
+        <div class="testimonial-role">CEO, Prep House</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Bell Recruitment have been working with our company for over 20 years, they are a professional organisation."</div>
+        <div class="testimonial-author">Alison McCluskey</div>
+        <div class="testimonial-role">NI Field Sales Director, Richmond Marketing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2>Ready for Your Next FMCG Career Move?</h2>
+  <p>Upload your CV and let us match you with the right opportunity. Many of our roles are filled before they're ever advertised.</p>
+  <div class="cta-buttons">
+    <a href="#cv" class="btn btn-gold">Upload Your CV</a>
+    <a href="#contact" class="btn btn-outline">Talk to Julie</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <h2>Meet Julie Bell — Founder &amp; CEO</h2>
+    <p class="section-intro">One of Northern Ireland's most experienced FMCG recruitment professionals, with over 35 years of combined industry and recruitment experience.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div>
+        <p style="margin-bottom:16px">Bell Recruitment was founded in 1999 with a single ambition: to become Northern Ireland's leading FMCG recruitment specialist by combining deep industry knowledge with a genuinely personal approach.</p>
+        <p style="margin-bottom:16px">Before launching the business, Julie spent a decade working inside the FMCG industry for brands including Pepsi, 7UP, Ballygowan Water, and Budweiser — spanning promotional activity, in-store merchandising, and national sales.</p>
+        <p>That hands-on experience means we understand not just what a great candidate looks like on paper, but how they perform on a route, in a depot, and in front of a buyer.</p>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;padding:32px">
+        <h3 style="font-size:1.2rem;margin-bottom:20px">Industry Involvement</h3>
+        <div style="font-size:14px;color:var(--text-muted);line-height:2">
+          Council Member — NI Chamber of Commerce<br>
+          Committee Member — Institute of Directors<br>
+          Board Member — CCEA<br>
+          Committee Member — Grocers' Benevolent Fund
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2>Let's Talk FMCG Recruitment</h2>
+    <p class="section-intro">Whether you're hiring or looking for your next role, we'd love to hear from you.</p>
+    <div class="contact-grid">
+      <div class="contact-details">
+        <h3>Contact Details</h3>
+        <div class="contact-item"><span class="contact-icon">📞</span> +44 28 9031 1211</div>
+        <div class="contact-item"><span class="contact-icon">✉</span> julie@bell-recruitment.net</div>
+        <div class="contact-item"><span class="contact-icon">📍</span> 24 Mount Charles, Belfast BT7 1NZ</div>
+        <div style="margin-top:32px;padding:24px;background:var(--warm-white);border-radius:12px;border:1px solid var(--border-light)">
+          <h3 style="font-size:1.1rem;margin-bottom:12px">Follow Us</h3>
+          <div style="font-size:14px;color:var(--text-muted)">
+            LinkedIn: bell-recruitment-ni<br>
+            Facebook: bellrecruits
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-group"><label>Name</label><input type="text" placeholder="Your full name"></div>
+          <div class="form-group"><label>Email *</label><input type="email" placeholder="your@email.com"></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+44..."></div>
+          <div class="form-group"><label>Subject</label><select><option>Hiring enquiry</option><option>Job seeker</option><option>General enquiry</option></select></div>
+          <div class="form-group"><label>Message</label><textarea placeholder="Tell us how we can help..."></textarea></div>
+          <button class="btn btn-burgundy" style="width:100%">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="data:image/png;base64,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" alt="Bell Recruitment" style="height:48px;border-radius:4px">
+      <p>Northern Ireland's specialist FMCG recruitment consultancy. Connecting brands with exceptional talent since 1999.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Executive Search</a>
+      <a href="#services">Permanent Recruitment</a>
+      <a href="#services">Field Marketing</a>
+      <a href="#cv">Upload CV</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#">Blog</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+442890311211">+44 28 9031 1211</a>
+      <a href="mailto:julie@bell-recruitment.net">julie@bell-recruitment.net</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Facebook</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Bell Recruitment. All rights reserved.</span>
+    <span>24 Mount Charles, Belfast BT7 1NZ</span>
+  </div>
+</footer>
+
+</body>
+</html>

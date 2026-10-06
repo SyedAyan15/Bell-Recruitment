@@ -30,6 +30,12 @@ const REVEAL = [
   ".contact-card",
   ".partners-label",
   ".footer-cta > *",
+  ".five-c",
+  ".role-group",
+  ".qa-card",
+  ".aside-card",
+  ".faq-item",
+  ".answer-card",
 ].join(", ");
 
 const MAX_STAGGER = 6;

@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { NAV_LINKS } from "@/lib/content";
+import { NAV_LINKS, URLS } from "@/lib/content";
+import { isPlainHref } from "./ButtonLink";
 
 // Sticky header with the main nav (collapses to a hamburger menu below 1080px).
 // It is transparent over the burgundy banner at the top of every page, and turns solid
@@ -48,22 +49,22 @@ export default function Header() {
 
         <nav className={`main-nav${open ? " open" : ""}`} aria-label="Primary">
           {NAV_LINKS.map((link) =>
-            link.external ? (
-              <a key={link.href} href={link.href} target="_blank" rel="noopener">
+            isPlainHref(link.href) ? (
+              <a key={link.href} href={link.href}>
                 {link.label}
               </a>
             ) : (
               <Link
                 key={link.href}
                 href={link.href}
-                className={pathname === link.href ? "active" : undefined}
+                className={pathname.startsWith(link.href) ? "active" : undefined}
                 onClick={close}
               >
                 {link.label}
               </Link>
             ),
           )}
-          <Link href="/cv-upload/" className="nav-cta" onClick={close}>
+          <Link href={URLS.cvUpload} className="nav-cta" onClick={close}>
             Upload CV
           </Link>
         </nav>
