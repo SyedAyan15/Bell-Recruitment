@@ -27,7 +27,6 @@ export default function CandidateProcessPage() {
         image="/images/cta-bg.jpg"
         buttons={[
           { label: "Upload your CV", href: URLS.cvUpload },
-          { label: "Talk to Julie", href: URLS.contact },
         ]}
       >
         Bell Recruitment has placed FMCG people in Northern Ireland since 1999. Many of the roles we work on are never
@@ -197,7 +196,6 @@ export default function CandidateProcessPage() {
         image="/images/grocery-aisle.jpg"
         buttons={[
           { label: "Upload your CV", href: URLS.cvUpload },
-          { label: "Talk to Julie", href: URLS.contact },
         ]}
       >
         Send your CV and we&rsquo;ll talk it through, or call Julie directly.

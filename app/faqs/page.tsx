@@ -72,10 +72,6 @@ const EMPLOYER_FAQS: Faq[] = [
     link: { label: "See the Client Process page", href: URLS.hire },
   },
   { q: "Can you recruit confidentially for a senior role?", a: "Yes. Our process is confidential from first approach to offer." },
-  {
-    q: "What should I give you when briefing a vacancy?",
-    a: "The job description, salary and package, territory and travel, reporting line, what’s essential versus preferred, how performance is measured, and your interview process.",
-  },
 ];
 
 const FAQ_SCHEMA = {
@@ -127,7 +123,6 @@ export default function FaqsPage() {
         title="Still have a question?"
         image="/images/team-meeting.jpg"
         buttons={[
-          { label: "Talk to Julie", href: URLS.contact },
           { label: "Hire FMCG talent", href: URLS.hire },
         ]}
       />

@@ -79,7 +79,6 @@ export default function TestimonialsPage() {
         image="/images/grocery-aisle.jpg"
         buttons={[
           { label: "Hire FMCG talent", href: URLS.hire },
-          { label: "Talk to Julie", href: URLS.contact },
         ]}
       >
         Send us the job description and we start the search within 24 hours.

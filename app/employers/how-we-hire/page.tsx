@@ -40,7 +40,6 @@ export default function HowWeHirePage() {
         title="How Bell Recruitment Hires for FMCG Employers"
         image="/images/interview.jpg"
         imagePosition="50% 35%"
-        buttons={[{ label: "Send us a vacancy", href: URLS.contact }]}
       >
         Send us the job description and we start the search within 24 hours. This page explains what happens from
         your first call to your new hire&rsquo;s start date, so you know what to expect at each step.

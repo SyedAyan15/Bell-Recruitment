@@ -175,10 +175,6 @@ export default function ServicesPage() {
                 a: "Approaching suitable people directly, including those not looking for a job, instead of waiting for applications. It’s usually confidential.",
               },
               { q: "How quickly will you start the search?", a: "Within 24 hours of receiving your job description." },
-              {
-                q: "What should I give you when briefing a vacancy?",
-                a: "The job description, salary and package, territory and travel, reporting line, what’s essential versus preferred, how performance is measured, and your interview process.",
-              },
             ]}
           />
           <ButtonRow buttons={[{ label: "See all FAQs", href: URLS.faqs, variant: "ghost" }]} />

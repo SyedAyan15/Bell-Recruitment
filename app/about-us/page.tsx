@@ -40,7 +40,6 @@ export default function AboutPage() {
         imagePosition="70% 30%"
         buttons={[
           { label: "Hire FMCG talent", href: URLS.hire },
-          { label: "Talk to Julie", href: URLS.contact },
         ]}
       >
         Bell Recruitment was founded in 1999 by Julie Bell with one aim: to be the best FMCG recruiter in Northern
@@ -177,7 +176,6 @@ export default function AboutPage() {
         image="/images/team-success.jpg"
         buttons={[
           { label: "Hire FMCG talent", href: URLS.hire },
-          { label: "Talk to Julie", href: URLS.contact },
         ]}
       />
     </>

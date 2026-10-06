@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ButtonRow } from "@/components/ButtonLink";
-import CtaBand from "@/components/CtaBand";
 import FaqList from "@/components/FaqList";
 import FiveCs from "@/components/FiveCs";
 import Founder from "@/components/Founder";
@@ -11,7 +10,7 @@ import ProofStrip from "@/components/ProofStrip";
 import RoleGroups from "@/components/RoleGroups";
 import TestimonialGrid from "@/components/TestimonialGrid";
 import Tilt from "@/components/Tilt";
-import { PARTNERS, URLS } from "@/lib/content";
+import { JULIE_ROLES, PARTNERS, URLS } from "@/lib/content";
 
 // Copy: "1. Home" in the client's Website Content document.
 
@@ -273,14 +272,29 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container">
-          <Founder title="Meet Julie Bell, founder of Bell Recruitment">
+          <Founder title="Julie Bell">
             <p>
-              Before founding Bell Recruitment, Julie worked in promotions, merchandising and sales at Pepsi, 7UP,
-              Ballygowan Water and Budweiser. That&rsquo;s why we judge a candidate by how they&rsquo;d perform on a
-              route, in a depot or in front of a buyer, not only by their CV. She sits on the NI Chamber of Commerce
-              council and the Institute of Directors committee, and is a board member of CCEA.
+              Bell Recruitment was launched in 1999 by Founder and CEO Julie Bell, with a clear vision: to be the best
+              FMCG Recruiter by combining her FMCG industry knowledge with a personal, people-first approach.
             </p>
-            <ButtonRow buttons={[{ label: "More about Julie", href: URLS.aboutUs }]} />
+            <p>
+              Now with over 25 years&rsquo; experience, the business has grown steadily, built on long-standing
+              relationships with both clients and candidates, and a reputation for quality, integrity, and results.
+            </p>
+            <p>
+              Before founding the business, Julie spent a decade working within FMCG for brands including Pepsi, 7UP,
+              Ballygowan water and Budweiser, across promotional activity, merchandising, and sales roles &ndash;
+              experience that continues to shape the way Bell Recruitment works with clients today.
+            </p>
+            <p>Julie is also active beyond the business, holding several notable roles:</p>
+            <ul className="roles-list">
+              {JULIE_ROLES.map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ul>
+            <p>
+              <strong>At Bell Recruitment, people are at the heart of everything we do.</strong>
+            </p>
           </Founder>
         </div>
       </section>
@@ -316,15 +330,6 @@ export default function HomePage() {
           <ButtonRow buttons={[{ label: "See all FAQs", href: URLS.faqs, variant: "ghost" }]} />
         </div>
       </section>
-
-      <CtaBand
-        title="Talk to Julie"
-        image="/images/grocery-aisle.jpg"
-        buttons={[
-          { label: "Hire FMCG talent", href: URLS.hire },
-          { label: "Find FMCG jobs", href: URLS.jobs },
-        ]}
-      />
     </>
   );
 }
