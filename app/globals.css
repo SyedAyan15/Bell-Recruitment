@@ -505,7 +505,20 @@ h1, h2, h3, h4 {
 .value-card-row h3 { font-size: 1.25rem; margin-bottom: 4px; }
 
 /* Roles we recruit. */
-.role-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; margin-top: 12px; }
+/* Six-column grid: three cards per row, and a short last row is stretched to fill the width
+   (five cards sit 3 + 2, four sit 3 + 1 full width) so there is no empty space on the right. */
+.role-groups { display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; margin-top: 12px; }
+.role-group { grid-column: span 2; }
+.role-group:nth-last-child(2):nth-child(3n+1), .role-group:last-child:nth-child(3n+2) { grid-column: span 3; }
+.role-group:last-child:nth-child(3n+1) { grid-column: span 6; }
+@media (max-width: 900px) {
+  .role-groups { grid-template-columns: repeat(2, 1fr); }
+  .role-group, .role-group:nth-last-child(2):nth-child(3n+1), .role-group:last-child:nth-child(3n+2) { grid-column: auto; }
+  .role-group:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .role-groups { grid-template-columns: 1fr; }
+}
 .role-group { padding: 26px 26px 22px; background: var(--warm-white); border: 1px solid var(--border-light); border-top: 3px solid var(--burgundy); border-radius: var(--radius); transition: border-color .3s, box-shadow .3s; }
 .role-group:hover { border-top-color: var(--accent); box-shadow: 0 12px 30px rgba(123,20,23,.08); }
 .role-group h3 { font-size: 1.3rem; margin-bottom: 14px; }
