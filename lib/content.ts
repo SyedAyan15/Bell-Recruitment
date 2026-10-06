@@ -29,12 +29,11 @@ export const URLS = {
 };
 
 export const NAV_LINKS = [
+  { href: URLS.aboutUs, label: "About Us" },
   { href: URLS.services, label: "Services" },
   { href: URLS.hire, label: "Employers" },
   { href: URLS.candidates, label: "Candidates" },
-  { href: URLS.aboutUs, label: "About Us" },
   { href: URLS.testimonials, label: "Testimonials" },
-  { href: URLS.faqs, label: "FAQs" },
   { href: URLS.jobs, label: "Jobs" },
   { href: URLS.contact, label: "Contact" },
 ];
@@ -99,10 +98,10 @@ export const TESTIMONIALS = {
 export type TestimonialId = keyof typeof TESTIMONIALS;
 
 export const JULIE_ROLES = [
-  "Council Member, Northern Ireland Chamber of Commerce",
-  "Committee Member, Institute of Directors",
-  "Board Member, Council for the Curriculum, Examinations and Assessment (CCEA)",
-  "Committee Member, Grocers’ Benevolent Fund",
+  "Council Member of the Northern Ireland Chamber of Commerce",
+  "Committee Member of the Institute of Directors",
+  "Board Member of the Council for Curriculum, Examinations & Assessment",
+  "Committee Member of the Grocers’ Benevolent Fund",
 ];
 
 // Used on the CV upload page (not yet rewritten in the content document).
@@ -117,7 +116,7 @@ export const CANDIDATE_REASONS = [
   },
   {
     title: "Confidential Career Guidance",
-    text: "Every conversation is confidential. Julie Bell personally manages senior relationships with candid, market-informed career advice.",
+    text: "Every conversation is confidential. We give candid, market-informed career advice.",
   },
   {
     title: "Access to Hidden Roles",

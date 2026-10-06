@@ -63,7 +63,7 @@ const EMPLOYER_FAQS: Faq[] = [
   },
   { q: "Which FMCG roles do you recruit?", a: ROLES_ANSWER },
   {
-    q: "How does Bell find candidates?",
+    q: "How does Bell Recruitment find candidates?",
     a: "We start with your brief, then search from there:",
     steps: [
       "Brief. We agree what you sell, to whom, the territory, how performance is measured and which experience is essential.",
@@ -105,7 +105,7 @@ export default function FaqsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
 
-      <PageHero eyebrow="FAQs" title="FMCG Recruitment FAQs" image="/images/fresh-produce.jpg">
+      <PageHero eyebrow="FAQs" title="FMCG Recruitment FAQs">
         Answers to the questions we hear most from FMCG candidates and employers in Northern Ireland. Can&rsquo;t find
         yours? Call Julie on <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.
       </PageHero>

@@ -26,7 +26,7 @@ const HERO_CLIENTS = PARTNERS.filter((p) =>
   ["Tennent's NI", "Irwin's Bakery", "Henderson Group", "Richmond Marketing"].includes(p.alt),
 );
 
-const LOCATIONS = ["Lisburn", "Newry", "Portadown", "Ballymena", "Derry/Londonderry"];
+const LOCATIONS = ["Belfast", "Bangor", "Lisburn", "Newry", "Portadown", "Ballymena", "Derry/Londonderry"];
 
 export default function HomePage() {
   return (
@@ -211,7 +211,7 @@ export default function HomePage() {
           <p className="callout">
             <i className="fas fa-shield-halved" aria-hidden="true" />
             <span>
-              And if a candidate we place leaves <mark className="hl">within 90 days, we provide a replacement</mark>.
+              And if a candidate we place leaves within 90 days, we provide a replacement.
             </span>
           </p>
           <ButtonRow buttons={[{ label: "See the full process", href: URLS.hire, variant: "gold" }]} />
@@ -233,7 +233,7 @@ export default function HomePage() {
             <div className="section-label">For candidates</div>
             <h2>Looking for an FMCG job in Northern Ireland?</h2>
             <p className="lead">
-              Many FMCG roles are filled before they&rsquo;re advertised. Register with Bell and we&rsquo;ll talk
+              Many FMCG roles are filled before they&rsquo;re advertised. Register with Bell Recruitment and we&rsquo;ll talk
               through each opportunity against five things that decide whether a job is right: compensation, commute,
               culture, career and competence.{" "}
               <mark className="hl">We don&rsquo;t send your CV to an employer without speaking to you first.</mark>
@@ -267,8 +267,7 @@ export default function HomePage() {
           <div className="section-label">Where we work</div>
           <h2 className="center">Recruiting for FMCG employers across Northern Ireland</h2>
           <p className="section-intro center">
-            We work with FMCG businesses throughout Northern Ireland, including Lisburn, Newry, Portadown, Ballymena
-            and Derry/Londonderry.
+            We work with FMCG businesses throughout Northern Ireland.
           </p>
           <ul className="loc-pills" aria-label="Locations">
             {LOCATIONS.map((l) => (

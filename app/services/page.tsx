@@ -26,9 +26,8 @@ const INCLUDES = [
 ];
 
 const WHY = [
-  { lead: "Founded in 1999 by someone from the trade.", text: "Julie spent ten years in FMCG before starting Bell." },
+  { lead: "Founded in 1999 by someone from the trade.", text: "Julie spent ten years in FMCG before starting Bell Recruitment." },
   { lead: "Long relationships.", text: "Many of our clients have worked with us for years, some for over 20, and come to us first when a role opens." },
-  { lead: "Personally managed.", text: "Julie manages the briefs herself." },
   { lead: "Backed up.", text: "A replacement if the hire leaves within 90 days." },
 ];
 
@@ -43,14 +42,14 @@ export default function ServicesPage() {
       >
         For the hires that decide how your FMCG business performs with customers, the best candidates are usually
         already in a good job and not applying anywhere. We find them, approach them directly and assess each one
-        before you meet them. Julie Bell manages every brief herself, drawing on a decade at Pepsi, 7UP, Ballygowan
-        and Budweiser.
+        before you meet them. Julie Bell founded Bell Recruitment after a decade at Pepsi, 7UP, Ballygowan and
+        Budweiser.
       </PageHero>
 
       <section className="section">
         <div className="container">
           <div className="section-label">What&rsquo;s included</div>
-          <h2>What FMCG executive search with Bell includes</h2>
+          <h2>What FMCG executive search with Bell Recruitment includes</h2>
           <div className="feature-grid">
             {INCLUDES.map((f) => (
               <div className="value-card" key={f.lead}>
@@ -154,7 +153,7 @@ export default function ServicesPage() {
 
       <section className="section">
         <div className="container">
-          <div className="section-label">Why Bell</div>
+          <div className="section-label">Why Bell Recruitment</div>
           <h2>Why FMCG employers choose Bell Recruitment</h2>
           <div className="why-grid">
             {WHY.map((w) => (

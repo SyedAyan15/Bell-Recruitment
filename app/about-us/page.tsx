@@ -33,11 +33,6 @@ const APPROACH = [
     lead: "We stand behind the placement.",
     text: "If a candidate leaves within 90 days, we provide a replacement.",
   },
-  {
-    icon: "fa-user-tie",
-    lead: "Julie manages the briefs herself.",
-    text: "No call centre, no handing you over to a junior.",
-  },
 ];
 
 export default function AboutPage() {
@@ -109,7 +104,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <div className="section-label">How we work</div>
-          <h2>The Bell approach</h2>
+          <h2>The Bell Recruitment approach</h2>
           <div className="feature-grid">
             {APPROACH.map((a) => (
               <div className="value-card" key={a.lead}>
@@ -142,16 +137,29 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container">
-          <Founder title="Julie Bell, Founder and CEO">
+          <Founder title="Julie Bell">
             <p>
-              Julie leads Bell Recruitment and personally manages client relationships. Alongside the business, she is
-              involved in Northern Ireland&rsquo;s wider business community:
+              Bell Recruitment was launched in 1999 by Founder and CEO Julie Bell, with a clear vision: to be the best
+              FMCG Recruiter by combining her FMCG industry knowledge with a personal, people-first approach.
             </p>
+            <p>
+              Now with over 25 years&rsquo; experience, the business has grown steadily, built on long-standing
+              relationships with both clients and candidates, and a reputation for quality, integrity, and results.
+            </p>
+            <p>
+              Before founding the business, Julie spent a decade working within FMCG for brands including Pepsi, 7UP,
+              Ballygowan water and Budweiser, across promotional activity, merchandising, and sales roles &ndash;
+              experience that continues to shape the way Bell Recruitment works with clients today.
+            </p>
+            <p>Julie is also active beyond the business, holding several notable roles:</p>
             <ul className="roles-list">
               {JULIE_ROLES.map((r) => (
                 <li key={r}>{r}</li>
               ))}
             </ul>
+            <p>
+              <strong>At Bell Recruitment, people are at the heart of everything we do.</strong>
+            </p>
           </Founder>
         </div>
       </section>

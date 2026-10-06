@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 const IN_COMMON = [
-  { icon: "fa-rotate", lead: "Years of repeat work.", text: "Several have used Bell for 20 years or more." },
+  { icon: "fa-rotate", lead: "Years of repeat work.", text: "Several have used Bell Recruitment for 20 years or more." },
   { icon: "fa-briefcase", lead: "Commercial hires.", text: "Sales and commercial roles come up in almost every quote." },
-  { icon: "fa-phone", lead: "Reliability.", text: "Clients describe Bell as the first call when a role opens." },
+  { icon: "fa-phone", lead: "Reliability.", text: "Clients describe Bell Recruitment as the first call when a role opens." },
 ];
 
 export default function TestimonialsPage() {
@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
         imagePosition="50% 30%"
       >
         We don&rsquo;t ask you to take our word for it. Here is what FMCG businesses across Northern Ireland say about
-        working with Bell.
+        working with Bell Recruitment.
       </PageHero>
 
       <ProofStrip
@@ -52,7 +52,7 @@ export default function TestimonialsPage() {
       <section className="section section-alt">
         <div className="container">
           <div className="section-label">First call</div>
-          <h2>Employers who go to Bell first</h2>
+          <h2>Employers who go to Bell Recruitment first</h2>
           <TestimonialGrid ids={["irwins", "gmMarketing", "prepHouse"]} />
         </div>
       </section>
