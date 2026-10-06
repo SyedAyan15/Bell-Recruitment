@@ -51,19 +51,34 @@ export default function AboutPage() {
         <div className="container split">
           <div>
             <div className="section-label">Our story</div>
-            <h2>Why Bell Recruitment exists</h2>
+            <h2>Built around people. Driven by relationships</h2>
             <p>
-              Before she started Bell, Julie Bell spent ten years working in FMCG, in promotions, merchandising and
-              sales roles at Pepsi, 7UP, Ballygowan Water and Budweiser. She saw how FMCG hires succeed or fail in
-              practice: <mark className="hl">on a sales route, in a depot, in front of a buyer</mark>.
+              From the beginning, the aim was never simply to fill vacancies. It was to understand people, understand
+              businesses and build relationships that last. By combining genuine industry knowledge with a personal
+              approach, Bell Recruitment set out to create a recruitment experience built on trust, integrity, quality
+              and results.
+            </p>
+            <p>More than 25 years later, that philosophy remains at the heart of the business.</p>
+            <p>
+              Bell Recruitment has grown through long standing relationships with clients and candidates, many of whom
+              have worked with us for years. We believe that successful recruitment is not about making the quickest
+              placement. It is about making the right connection between the right person and the right organisation.
             </p>
             <p>
-              Most CVs don&rsquo;t show that. So Julie built a recruitment business around judging people the way an
-              FMCG employer would.
+              Our commitment to people also extends beyond recruitment. Julie has actively contributed to the wider
+              Northern Ireland business and community, including roles with the Northern Ireland Chamber of Commerce,
+              Institute of Directors, Council for Curriculum, Examinations &amp; Assessment and the Grocers&rsquo;
+              Benevolent Fund.
             </p>
             <p>
-              The business has grown steadily since 1999, built on long relationships with clients and candidates and a
-              reputation for quality, integrity and results.
+              Today, Bell Recruitment continues to bring together industry expertise, personal relationships and a
+              genuine understanding of people.
+            </p>
+            <p>
+              <strong>Because businesses are built by people.</strong>
+            </p>
+            <p>
+              <strong>And at Bell Recruitment, people will always come first.</strong>
             </p>
           </div>
           <div className="split-photo split-photo-tall">
