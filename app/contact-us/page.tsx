@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Contact Us" };
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Get in touch" title="Let's talk FMCG recruitment" image="/images/grocery-aisle.jpg">
+      <PageHero title="Get in touch" image="/images/grocery-aisle.jpg">
         Whether you&rsquo;re hiring or looking for your next role, we&rsquo;d love to hear from you.
       </PageHero>
 
