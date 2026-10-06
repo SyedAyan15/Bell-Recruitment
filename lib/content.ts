@@ -22,6 +22,7 @@ export const URLS = {
   hire: "/employers/how-we-hire/",
   candidates: "/candidates/how-it-works/",
   faqs: "/faqs/",
+  blogs: "/blogs/",
   jobs: "/jobs/",
   salesRoles: "/jobs/sales-roles-northern-ireland/",
   contact: "/contact-us/",
@@ -35,6 +36,7 @@ export const NAV_LINKS = [
   { href: URLS.candidates, label: "Candidates" },
   { href: URLS.testimonials, label: "Testimonials" },
   { href: URLS.jobs, label: "Jobs" },
+  { href: URLS.blogs, label: "Blogs" },
   { href: URLS.contact, label: "Contact" },
 ];
 
