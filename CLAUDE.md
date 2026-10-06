@@ -29,5 +29,5 @@ Marketing site for Bell Recruitment (FMCG recruitment, Belfast): Next.js 16 App 
 
 - **Scroll-reveal selectors are duplicated**: `REVEAL` in [components/ScrollReveal.tsx](components/ScrollReveal.tsx) and the `html.js :is(...)` rule in `globals.css`. Add new animated element types to both.
 - The vetting `ProcessSteps` are deliberately excluded from general scroll reveal; their timing is driven by `--seq` / `--loop-start` on `.process-grid` in `globals.css`.
-- Colours are CSS variables at the top of `globals.css`; dark mode redefines them under `prefers-color-scheme: dark`. Breakpoints: 1080px (hamburger), 900px (single column), 560px (phone, `mobile-swipe` grids).
+- Colours are CSS variables at the top of `globals.css`. Breakpoints: 1080px (hamburger), 900px (single column), 560px (phone, `mobile-swipe` grids).
 - The repo has two remotes: `origin` (zainautomation/Bellrecruitment) and `ayan` (SyedAyan15/Bell-Recruitment). Saved Git credentials on the dev machine may belong to the latter and be denied on `origin`.

@@ -23,7 +23,7 @@ npm start
 ```
 app/
   layout.tsx            Root layout: fonts, header, footer, scroll-reveal, back-to-top
-  globals.css           All styles (design tokens at the top, dark mode, responsive rules at the bottom)
+  globals.css           All styles (design tokens at the top, responsive rules at the bottom)
   icon.png              Browser tab icon (picked up automatically by Next.js)
   page.tsx              Home
   about-us/             About Julie Bell and the company
@@ -118,7 +118,7 @@ These files live on the server's disk. On hosts without a persistent filesystem,
 
 ## Styling
 
-- Colours are CSS variables at the top of `globals.css` (`--burgundy`, `--accent`, `--cream` and so on). Dark mode redefines them under `prefers-color-scheme: dark`.
+- Colours are CSS variables at the top of `globals.css` (`--burgundy`, `--accent`, `--cream` and so on).
 - Fonts are loaded with `next/font`: Cormorant Garamond for headings and Inter for body text.
 - Icons come from Font Awesome 6, loaded from cdnjs in `app/layout.tsx`.
 - Breakpoints: 1080px (hamburger menu), 900px (single-column layouts), 560px (phone).
