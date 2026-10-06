@@ -32,7 +32,7 @@ export default function CtaBand({
             <i className="fas fa-envelope" aria-hidden="true" /> {CONTACT.email}
           </a>
         </p>
-        <ButtonRow buttons={buttons.map((b, i) => ({ variant: i === 0 ? "gold" : "outline", ...b }))} />
+        <ButtonRow buttons={buttons.map((b, i) => ({ variant: i === 0 ? "light" : "outline", ...b }))} />
       </div>
     </section>
   );

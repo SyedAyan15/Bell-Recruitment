@@ -17,7 +17,7 @@ export default function Header() {
   const progressRef = useRef<HTMLDivElement>(null);
   const close = () => setOpen(false);
 
-  // On scroll: fill the gold progress bar (via the --progress CSS variable, no re-render)
+  // On scroll: fill the white progress bar (via the --progress CSS variable, no re-render)
   // and switch to the slimmer "scrolled" header. Throttled to one update per frame.
   useEffect(() => {
     let frame = 0;

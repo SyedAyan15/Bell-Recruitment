@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export type ButtonSpec = { label: string; href: string; variant?: "gold" | "outline" | "burgundy" | "ghost" };
+export type ButtonSpec = { label: string; href: string; variant?: "light" | "outline" | "burgundy" | "ghost" };
 
 // /jobs/ pages are redirects (see next.config.ts) and external URLs leave the site, so they
 // use a plain <a>; everything else uses Next's <Link> for fast in-site navigation.

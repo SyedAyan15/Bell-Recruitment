@@ -143,7 +143,7 @@ export default function HowWeHirePage() {
               <strong>90 days</strong>
               <span>If a candidate we place leaves within 90 days, we provide a replacement.</span>
             </div>
-            <ButtonRow buttons={[{ label: "Send us a vacancy", href: URLS.contact, variant: "gold" }]} />
+            <ButtonRow buttons={[{ label: "Send us a vacancy", href: URLS.contact, variant: "light" }]} />
           </aside>
         </div>
       </section>

@@ -6,7 +6,7 @@ export type Step = { title: string; text: ReactNode };
 const SEQ_STEP = 0.7;
 
 // Animated step-by-step process. Each step except the last has a connector to the next
-// step with a gold dot on it. When the list scrolls into view the steps appear one at a
+// step with a dot on it. When the list scrolls into view the steps appear one at a
 // time as the line reaches them, then the dot keeps looping and each circle pulses as it
 // arrives. `--step` is the step index the CSS uses for all timings.
 //

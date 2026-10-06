@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-cta">
         <h2>Sourcing the best FMCG talent.</h2>
         <div className="btn-row">
-          <a className="btn btn-gold" href={URLS.jobs}>
+          <a className="btn btn-light" href={URLS.jobs}>
             Find FMCG jobs
           </a>
           <Link className="btn btn-outline" href={URLS.hire}>

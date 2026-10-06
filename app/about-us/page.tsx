@@ -97,7 +97,7 @@ export default function AboutPage() {
             Because we do one thing, we know the market: who&rsquo;s moving, who&rsquo;s performing, and what a role
             really involves.
           </p>
-          <ButtonRow buttons={[{ label: "See our executive search service", href: URLS.services, variant: "gold" }]} />
+          <ButtonRow buttons={[{ label: "See our executive search service", href: URLS.services, variant: "light" }]} />
         </div>
       </section>
 

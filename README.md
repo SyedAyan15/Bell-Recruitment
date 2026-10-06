@@ -70,7 +70,7 @@ Page headings and intro paragraphs are in each page's `page.tsx`.
 
 | Component | Purpose |
 |---|---|
-| `Header` | Sticky nav: transparent over the burgundy banner at the top of each page, solid burgundy once scrolled; mobile menu and gold scroll-progress bar |
+| `Header` | Sticky nav: transparent over the burgundy banner at the top of each page, solid burgundy once scrolled; mobile menu and white scroll-progress bar |
 | `Footer` | Call to action, link columns, contact details |
 | `PageHero` | Top banner on inner pages, with an optional background photo |
 | `MeetJulie` | Founder photo and bio (Home and About) |
@@ -93,7 +93,7 @@ All animation is plain CSS and small React components.
 
 > The selector list exists in two places: `REVEAL` in `components/ScrollReveal.tsx` and the `html.js :is(...)` rule in `globals.css`. If you add a new element type that should animate in, add it to **both**.
 
-**Vetting process.** `ProcessSteps` gives every step except the last a `.process-link` connector running from its circle to the next one, with a gold `.process-dot` on it. The grid is observed separately from other content and gets the `in` class once its top edge is a little way into view. Then, all in CSS:
+**Vetting process.** `ProcessSteps` gives every step except the last a `.process-link` connector running from its circle to the next one, with a `.process-dot` on it. The grid is observed separately from other content and gets the `in` class once its top edge is a little way into view. Then, all in CSS:
 
 1. **Build-up sequence.** Step 1 appears first. Its connector draws towards step 2 with the dot leading the line, and step 2 appears the moment the dot reaches it, and so on up to step 5. Each step takes `--seq` (0.7s).
 2. **Loop.** From `--loop-start` (4s) the dot travels one connector per second on a 5-second loop, and each circle pulses as it arrives.
@@ -118,7 +118,7 @@ These files live on the server's disk. On hosts without a persistent filesystem,
 
 ## Styling
 
-- Colours are CSS variables at the top of `globals.css` (`--burgundy`, `--gold`, `--cream` and so on). Dark mode redefines them under `prefers-color-scheme: dark`.
+- Colours are CSS variables at the top of `globals.css` (`--burgundy`, `--accent`, `--cream` and so on). Dark mode redefines them under `prefers-color-scheme: dark`.
 - Fonts are loaded with `next/font`: Cormorant Garamond for headings and Inter for body text.
 - Icons come from Font Awesome 6, loaded from cdnjs in `app/layout.tsx`.
 - Breakpoints: 1080px (hamburger menu), 900px (single-column layouts), 560px (phone).

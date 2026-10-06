@@ -47,7 +47,7 @@ export default function HomePage() {
             </p>
             <ButtonRow
               buttons={[
-                { label: "Hire FMCG talent", href: URLS.hire, variant: "gold" },
+                { label: "Hire FMCG talent", href: URLS.hire, variant: "light" },
                 { label: "Find FMCG jobs", href: URLS.jobs, variant: "outline" },
                 { label: "Submit your CV", href: URLS.cvUpload, variant: "outline" },
               ]}
@@ -214,7 +214,7 @@ export default function HomePage() {
               And if a candidate we place leaves within 90 days, we provide a replacement.
             </span>
           </p>
-          <ButtonRow buttons={[{ label: "See the full process", href: URLS.hire, variant: "gold" }]} />
+          <ButtonRow buttons={[{ label: "See the full process", href: URLS.hire, variant: "light" }]} />
         </div>
       </section>
 
@@ -258,7 +258,7 @@ export default function HomePage() {
             including those who aren&rsquo;t looking, assess them against our 5C framework, and send you a short list.
             The whole process is confidential, from first approach to offer.
           </p>
-          <ButtonRow buttons={[{ label: "Learn more about FMCG executive search", href: URLS.services, variant: "gold" }]} />
+          <ButtonRow buttons={[{ label: "Learn more about FMCG executive search", href: URLS.services, variant: "light" }]} />
         </div>
       </section>
 

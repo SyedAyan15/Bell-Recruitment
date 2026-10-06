@@ -42,7 +42,7 @@ export default function PageHero({
           <LetterReveal text={title} accent={accent} />
         </h1>
         {children && <p>{children}</p>}
-        {buttons && <ButtonRow buttons={buttons.map((b, i) => ({ variant: i === 0 ? "gold" : "outline", ...b }))} />}
+        {buttons && <ButtonRow buttons={buttons.map((b, i) => ({ variant: i === 0 ? "light" : "outline", ...b }))} />}
       </div>
     </section>
   );

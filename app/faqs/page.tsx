@@ -17,10 +17,6 @@ const ROLES_ANSWER =
   "Commercial Directors, Heads of Sales, Commercial Managers, Sales Executives and Representatives, Business Development Managers and Executives, National, Key, On-Trade and Off-Trade Account Managers, Marketing and Brand Managers, and commercial roles inside FMCG businesses.";
 
 const CANDIDATE_FAQS: Faq[] = [
-  {
-    q: "How does an FMCG recruitment agency work for candidates?",
-    a: "Employers hire us to fill a specific role, so we only put you forward when there’s a genuine fit. You register, we talk to you about your experience, and when a role matches we call you first and talk it through before anything goes further.",
-  },
   { q: "Which FMCG roles does Bell Recruitment recruit?", a: ROLES_ANSWER },
   {
     q: "Do I need FMCG experience?",

@@ -7,7 +7,7 @@ const LETTER_DELAY_MS = 18;
 // letter by --i. Words never break mid-word. Screen readers and search engines get the
 // plain text from the visually hidden copy.
 //
-// `accent` is an optional phrase inside `text` that is styled as <em> (gold italic in banners).
+// `accent` is an optional phrase inside `text` that is styled as <em> (white italic in banners).
 export default function LetterReveal({ text, accent }: { text: string; accent?: string }) {
   const start = accent ? text.indexOf(accent) : -1;
   const segments =
