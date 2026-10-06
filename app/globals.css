@@ -468,6 +468,10 @@ h1, h2, h3, h4 {
 .section-dark .hl { background: none; color: #fff; font-weight: 700; }
 
 /* Two columns: text beside a photo or second column. */
+.split p { margin-bottom: 16px; }
+/* Closing statement under a story block: set apart with a burgundy rule. */
+.story-close { margin-top: 28px; padding-left: 20px; border-left: 3px solid var(--burgundy); }
+.story-close p { margin-bottom: 4px; font-family: var(--font-serif), serif; font-size: 1.35rem; font-weight: 600; line-height: 1.35; color: var(--text-dark); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split-top { align-items: start; }
 .split > div > h2 { max-width: none; }

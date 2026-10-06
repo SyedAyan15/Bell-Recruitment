@@ -104,7 +104,7 @@ export default function CandidateProcessPage() {
               <div className="value-icon">
                 <i className="fas fa-file-lines" aria-hidden="true" />
               </div>
-              <div className="section-label">After you apply</div>
+              <div className="section-label">After you apply to Bell Recruitment</div>
             </div>
             <h2>What happens after I send my CV to a recruitment agency?</h2>
             <ol className="num-list">
@@ -112,10 +112,6 @@ export default function CandidateProcessPage() {
               <li>If there&rsquo;s a possible fit, we contact you.</li>
               <li>We talk through the role with you before your details go to any employer.</li>
             </ol>
-            <div className="qa-card">
-              <h3>Will my CV be sent to employers without my permission?</h3>
-              <p>No. We speak to you first, and your CV only goes to an employer with your agreement.</p>
-            </div>
           </div>
         </div>
       </section>

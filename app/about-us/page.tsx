@@ -52,7 +52,7 @@ export default function AboutPage() {
           <div>
             <div className="section-label">Our story</div>
             <h2>Built around people. Driven by relationships</h2>
-            <p>
+            <p className="lead">
               From the beginning, the aim was never simply to fill vacancies. It was to understand people, understand
               businesses and build relationships that last. By combining genuine industry knowledge with a personal
               approach, Bell Recruitment set out to create a recruitment experience built on trust, integrity, quality
@@ -65,21 +65,13 @@ export default function AboutPage() {
               placement. It is about making the right connection between the right person and the right organisation.
             </p>
             <p>
-              Our commitment to people also extends beyond recruitment. Julie has actively contributed to the wider
-              Northern Ireland business and community, including roles with the Northern Ireland Chamber of Commerce,
-              Institute of Directors, Council for Curriculum, Examinations &amp; Assessment and the Grocers&rsquo;
-              Benevolent Fund.
-            </p>
-            <p>
               Today, Bell Recruitment continues to bring together industry expertise, personal relationships and a
               genuine understanding of people.
             </p>
-            <p>
-              <strong>Because businesses are built by people.</strong>
-            </p>
-            <p>
-              <strong>And at Bell Recruitment, people will always come first.</strong>
-            </p>
+            <div className="story-close">
+              <p>Because businesses are built by people.</p>
+              <p>And at Bell Recruitment, people will always come first.</p>
+            </div>
           </div>
           <div className="split-photo split-photo-tall">
             <Image
